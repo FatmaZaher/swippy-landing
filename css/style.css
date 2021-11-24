@@ -8,6 +8,8 @@
   --blue-color: #8cc8cc;
   --pargh-color: #bfbfbf;
   --box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 39%);
+  --border-radius: 6px;
+  --btn-input-padding: 12px 30px;
 }
 html,
 body {
@@ -178,12 +180,12 @@ body {
 }
 .navbar .navbar-menu .start-for-free {
   text-align: center;
-  width: 192px;
-  padding: 10px 20px;
+  width: 216px;
+  padding: var(--btn-input-padding);
   background-color: var(--white-color);
   color: var(--main-color);
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   transition: all 0.3s ease-in-out;
 }
 .navbar .navbar-menu .start-for-free:hover {
@@ -227,7 +229,7 @@ body {
   height: 44px;
   width: 63px;
   background-color: var(--text-color);
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   text-align: center;
   line-height: 44px;
   font-weight: 800;
@@ -245,7 +247,7 @@ body {
 .overlay {
   position: fixed;
   height: 100%;
-  width: 100%;
+  width: 120%;
   left: -10px;
   top: 0;
   z-index: 100;
@@ -259,13 +261,14 @@ body {
   height: 100%;
   width: 80%;
   top: 0;
-  right: -100%;
   padding: 30px;
   text-align: center;
-  border-radius: 25px 0 0 25px;
   background-color: var(--white-color);
   z-index: 101;
-  /* overflow-y: scroll; */
+}
+.navbar .mobile-menu-ltr {
+  right: -100%;
+  border-radius: 25px 0 0 25px;
 }
 .navbar .mobile-menu .mobile-ul {
   padding: 120px 0;
@@ -277,14 +280,13 @@ body {
 
 .navbar .mobile-menu .mobile-ul ul li {
   margin: 20px 0;
-  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  padding: var(--btn-input-padding);
   width: 100%;
-  /* border-radius: 6px;
-  border: 1px solid var(--main-color); */
-  cursor: pointer; 
+  cursor: pointer;
 }
 .navbar .mobile-menu .mobile-ul ul li:hover {
- box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 .navbar .mobile-menu .mobile-ul ul li .nav-item {
   color: var(--main-color);
@@ -292,11 +294,11 @@ body {
 }
 .navbar .mobile-menu .mobile-ul .start-for-free {
   width: 100%;
-  padding: 10px 20px;
+  padding: var(--btn-input-padding);
   background-color: var(--main-color);
   color: var(--white-color);
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   transition: all 0.3s ease-in-out;
   display: block;
 }
@@ -305,9 +307,9 @@ body {
 }
 .navbar .mobile-menu .mobile-ul .lang-switch {
   width: 100%;
-  padding: 10px 20px;
+  padding: var(--btn-input-padding);
   background-color: var(--text-color);
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   text-align: center;
   font-weight: 800;
   color: var(--white-color) !important;
@@ -320,9 +322,11 @@ body {
 
 .navbar .mobile-menu .mobile-off {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .navbar .mobile-menu .mobile-off img {
-  float: right;
   margin-top: 8px;
 }
 .mobile-menu .logo {
@@ -371,10 +375,10 @@ body {
   color: var(--blue-color);
 }
 .content .home-section .home-section-content .left-side .control .start-btn {
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   display: inline-block;
   width: 207px;
-  padding: 10px 20px;
+  padding: var(--btn-input-padding);
   background-color: var(--white-color);
   color: var(--main-color);
   font-weight: 500;
