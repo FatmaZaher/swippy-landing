@@ -1,0 +1,192 @@
+.theme-01 {
+  background: linear-gradient(45deg, #110a7b, #308fdf);
+}
+.theme-02 {
+  background: linear-gradient(135deg, #ff6cac 0%, #7366ff 100%);
+}
+.theme-03 {
+  background: linear-gradient(135deg, #64e8dd 0%, #8b64eb 100%);
+}
+.theme-04 {
+  background: linear-gradient(135deg, #b55eba 0%, #7bf2e8 100%);
+}
+.theme-05 {
+  background: linear-gradient(135deg, #ff9582 0%, #7e77ff 100%);
+}
+.theme-06 {
+  background: linear-gradient(135deg, #ffce1b 0%, #ff891b 100%);
+}
+.theme-07 {
+  background: linear-gradient(135deg, #ea4c2c 0%, #ffa42e 100%);
+}
+.theme-08 {
+  background: linear-gradient(135deg, #00ffee 0%, #00b7ba 100%);
+}
+.theme-09 {
+  background: linear-gradient(135deg, #6ee3f5 0%, #6354f0 100%);
+}
+.theme-10 {
+  background: linear-gradient(135deg, #349aff 0%, #3a3985 100%);
+}
+.theme-11 {
+  background: linear-gradient(135deg, #ffcea5 0%, #ee4d5f 100%);
+}
+.theme-12 {
+  background: linear-gradient(135deg, #5750de 0%, #f869d4 100%);
+}
+.theme-13 {
+  background: linear-gradient(135deg, #f00b50 0%, #780160 100%);
+}
+.theme-14 {
+  background: url(../images/back1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.theme-15 {
+  background-image: url(../images/back2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.theme-16 {
+  background: url(../images/back3-1.svg) center/400px no-repeat,
+    url(../images/back3-2.svg) center/1100px no-repeat,
+    url(../images/back3-3.svg) center/1700px no-repeat, #3b80bb;
+}
+.theme-17 {
+  background: url(../images/back4.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.theme-18 {
+  background: url(../images/back5.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/***********************/
+.avatar-01 {
+  border-radius: 50%;
+}
+.avatar-02 {
+  border-radius: 0px;
+}
+.avatar-03 {
+  border-radius: 12px;
+}
+.avatar-04 {
+  border-radius: 40px 40px 40px 40px/20px 20px 20px 20px;
+}
+/***************************/
+.style-btn-01 {
+  border-radius: 0px;
+  background: var(--white-color);
+  border: none;
+}
+.style-btn-02 {
+  border-radius: 10px;
+  background: var(--white-color);
+  border: none;
+}
+.style-btn-03 {
+  border-radius: 24px;
+  background: var(--white-color);
+  border: none;
+}
+.style-btn-04 {
+  border-radius: 0px;
+  background: none;
+  border: 1px solid var(--white-color);
+}
+.style-btn-05 {
+  border-radius: 10px;
+  background: none;
+  border: 1px solid var(--white-color);
+}
+.style-btn-06 {
+  border-radius: 24px;
+  background: none;
+  border: 1px solid var(--white-color);
+}
+.style-btn-07 {
+  border-radius: 0px;
+  background: var(--white-color);
+  border: 2px solid var(--border-color);
+}
+.style-btn-08 {
+  border-radius: 10px;
+  background: var(--white-color);
+  border: 2px solid var(--border-color);
+}
+.style-btn-09 {
+  border-radius: 24px;
+  background: var(--white-color);
+  border: 2px solid var(--border-color);
+}
+/*****************************/
+.background-style-01 {
+  background: #8055f080;
+}
+.background-style-02 {
+  background: linear-gradient(0deg, rgb(73 48 137), rgb(128 85 240 / 82%));
+}
+.background-style-03 {
+  background: linear-gradient(0deg, rgb(128 85 240 / 82%), rgb(73 48 137));
+}
+/***************************/
+.left-align {
+  text-align: left;
+}
+.center-align {
+  text-align: center;
+}
+.right-align {
+  text-align: right;
+}
+/********************************/
+[class*="-btn"] {
+  padding: var(--btn-input-padding);
+  display: block;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.whats-btn {
+  background: linear-gradient(
+    0deg,
+    rgba(46, 153, 33, 1) 0%,
+    rgba(94, 227, 87, 1) 100%
+  );
+}
+.telegram-btn {
+  background: linear-gradient(
+    180deg,
+    rgba(78, 178, 235, 1) 0%,
+    rgba(37, 130, 198, 1) 85%,
+    rgba(44, 138, 198, 1) 100%
+  );
+}
+.twitter-btn {
+  background: linear-gradient(
+    0deg,
+    rgba(28, 134, 221, 1) 0%,
+    rgba(84, 198, 247, 1) 100%
+  );
+}
+.insta-btn {
+  background: linear-gradient(
+    270deg,
+    rgba(245, 132, 60, 1) 0%,
+    rgba(215, 57, 122, 1) 55%,
+    rgba(89, 89, 206, 1) 100%
+  );
+}
+.facebook-btn {
+  background: linear-gradient(
+    270deg,
+    rgba(245, 132, 60, 1) 0%,
+    rgba(215, 57, 122, 1) 55%,
+    rgba(89, 89, 206, 1) 100%
+  );
+}
