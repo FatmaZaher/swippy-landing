@@ -92,4 +92,18 @@ $(document).ready(function () {
         duration: 1500,
         once: true,
     });
+
+    $("#qr-code-show-btn").on('click' , function(e){
+        console.log(this)
+        $('#qrCodeDropdown').fadeToggle()
+        
+        
+        })
+        $("#share-show-btn").on('click' , function(e){
+        console.log(this)
+        $('#share_profile_link').fadeToggle()
+        
+        
+        })
+        
 })
