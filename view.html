@@ -1,669 +1,1297 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="icon" href="./images/logo11.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="icon" href="./images/logo11.png" />
     <title>Swipyy</title>
-    <link rel="stylesheet" href="./css/all.min.css">
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./css/owl.theme.default.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
     <!-- <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/allStyle.css"> -->
-    <link rel="stylesheet" href="https://cdn-f.heylink.me/static/dist/css/style.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn-f.heylink.me/static/dist/css/style.min.css"
+    />
     <style>
-        #share-show-btn ,
-        #qr-code-show-btn{
-            border: none !important;
-            outline: none !important;
-            background: none;
-        }
-        .content-wrapper .user-page-section .wrapper .user-page-section-content .user-info .preview-share-icon__component svg {
-            width: 20px;
-            min-width: 20px;
-            height: 20px;
-            display: block;
-        }
+      #share-show-btn,
+      #qr-code-show-btn {
+        border: none !important;
+        outline: none !important;
+        background: none;
+      }
+      .content-wrapper
+        .user-page-section
+        .wrapper
+        .user-page-section-content
+        .user-info
+        .preview-share-icon__component
+        svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        display: block;
+      }
+      .share-dropdown__menu
+        .dropdow-menu__wrapper
+        .dropdown-menu__close
+        .dropdown-menu-close-btn
+        span
+        svg {
+        width: 100% !important;
+        height: 100% !important;
+        min-width: auto !important;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <div class="notification__popup" id="notificationPopUp">
-        <div class="notification__wrapper">
-            <div class="notication-text"></div>
-        </div>
+      <div class="notification__wrapper">
+        <div class="notication-text"></div>
+      </div>
     </div>
 
     <div class="content-wrapper">
-        <div class="user-page-section theme-class-21-pro">
-            <div class="user-page-section-background lazy entered" data-ll-status="entered">
-                <div id="bg-color">#c069d1</div>
-            </div>
-            <div class="container">
-                <div class="wrapper padded-bottom avatar-page-layout" id="userWrapper" style="min-height: 0px;">
-                    <div class="user-page-section-content">
-                        <!-- div include the personal img - username - user description - highligts title and details -->
-                        <div class="user-info">
-                            <div class="logo-container">
-                                <div class="common-user-icon__component avatar-style-04">
-                                    <div class="common-user-icon-wrapper"></div>
-                                </div>
-                                <div class="preview-share-icon__component qr-code__component" id="qrCodeIconDropdown">
-                                    <button id="qr-code-show-btn">
-                                    <svg version="1.1" id="Слой_1" xmlns="https://www.w3.org/2000/svg"
-                                        xmlns:xlink="https://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 60 60"
-                                        xml:space="preserve">
-                                        <style>
-                                            .st1 {
-                                                fill: ''
-                                            }
-                                        </style>
-                                        <defs>
-                                            <path id="SVGID_1_" d="M0 0h60v60H0z"></path>
-
-                                        </defs>
-                                        <clipPath id="SVGID_2_">
-                                            <use xlink:href="#SVGID_1_" overflow="visible"></use>
-                                        </clipPath>
-                                        <g clip-path="url(#SVGID_2_)">
-                                            <path class="st1"
-                                                d="M57.6 34.3h-18c-1.3 0-2.4 1.1-2.4 2.5v20.8c0 1.4 1.1 2.5 2.4 2.5h18c1.3 0 2.4-1.1 2.4-2.5V36.7c0-1.3-1.1-2.4-2.4-2.4zm-2.4 20.8H42V39.2h13.1v15.9zM2.6 23.3h8.2c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5H5.1V5h12.8v9.2c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5V2.5C23 1.1 21.8 0 20.4 0H2.6C1.9 0 1.2.3.7.7.3 1.2 0 1.8 0 2.5v18.4c0 1.3 1.2 2.4 2.6 2.4zM2.5 60h15.4c1.4 0 2.5-1.1 2.5-2.5v-15c0-1.4-1.1-2.5-2.5-2.5H2.5C1.1 40 0 41.1 0 42.5v15C0 58.9 1.1 60 2.5 60zm2.6-15h10.3v10.1H5.1V45z">
-                                            </path>
-                                            <path class="st1"
-                                                d="M28.7 56.7c1.3 0 2.4-1.1 2.4-2.5V28.3h26.4c1.3 0 2.4-1.1 2.4-2.5s-1.1-2.5-2.4-2.5H28.7c-.6 0-1.3.3-1.7.7-.5.5-.7 1.1-.7 1.7v28.4c0 1.5 1.1 2.6 2.4 2.6zM2.4 34.2h16.3c1.3 0 2.4-1.1 2.4-2.5v-5c0-1.4-1.1-2.5-2.4-2.5-1.3 0-2.4 1.1-2.4 2.5v2.5H2.4c-1.3 0-2.4 1.1-2.4 2.5s1.1 2.5 2.4 2.5zM30.4 18c1.3 0 2.4-1.1 2.4-2.5V7.2c0-1.4-1.1-2.5-2.4-2.5-.7 0-1.3.3-1.7.7-.5.6-.7 1.2-.7 1.8v8.4c0 1.3 1 2.4 2.4 2.4zM40.4 18.3h17.2c1.3 0 2.4-1.1 2.4-2.5V2.5C60 1.1 58.9 0 57.6 0H40.4C39.1 0 38 1.1 38 2.5v13.4c0 1.3 1.1 2.4 2.4 2.4zm2.4-13.4h12.3v8.4H42.8V4.9z">
-                                            </path>
-                                        </g>
-                                    </svg></button>
-                                    <div class="share-dropdown__menu qr-code-dropdown closable" id="qrCodeDropdown">
-                                        <div class="dropdow-menu__wrapper">
-                                            <div class="dropdown-menu__close">
-                                                <div class="dropdown-menu-close-btn">
-                                                    <span>
-                                                        <svg xmlns="https://www.w3.org/2000/svg" version="1.1"
-                                                            id="prefix__Layer_1" x="0" y="0" viewBox="0 0 492 492"
-                                                            xml:space="preserve" width="512" height="512">
-                                                            <script type="text/javascript"></script>
-                                                            <path
-                                                                d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
-                                                                data-original="#000000" class="prefix__active-path"
-                                                                fill="#fff">
-                                                            </path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="dropdow-menu__container">
-                                                <div class="qr-code-dropdown-content">
-                                                    <div class="qr-code-dropdown-header">
-                                                        <svg version="1.1" id="Layer_1"
-                                                            xmlns="https://www.w3.org/2000/svg" x="0" y="0"
-                                                            viewBox="0 0 43.9 43.9" xml:space="preserve">
-                                                            <path
-                                                                d="M34.6 9.3l7.1 7.1c2.5 2.5 2.5 6.6 0 9.2-.4.4-.7.8-1.1 1.1-1.3 1.2-3.3 1.2-4.5-.1-.9-.9-1.2-2.2-.8-3.4.2-.5.2-.4.5-1.2.4-.9.2-2.1-.6-2.8l-5.3-5.3-5.3-5.3c-.8-.8-1.9-.9-2.8-.6-.8.3-.7.3-1.2.5-1.1.4-2.5.2-3.4-.8-1.2-1.2-1.3-3.2-.1-4.5l1.1-1.1c2.5-2.5 6.6-2.5 9.2 0l7.2 7.2zM13.9 30.1l-5.3-5.3c-.7-.7-.9-1.8-.6-2.7.1-.3.4-1 .5-1.2.5-1.2.2-2.5-.7-3.5-1.2-1.2-3.2-1.3-4.5-.1l-1.1 1.1c-2.5 2.5-2.5 6.6 0 9.2l7.1 7.1 7.1 7.1c2.5 2.5 6.6 2.5 9.2 0 .4-.4.8-.7 1.1-1.1 1.2-1.3 1.2-3.3-.1-4.5-.9-.9-2.3-1.2-3.5-.7-.3.1-.9.4-1.2.5-.9.3-2 .1-2.7-.6l-5.3-5.3zM33.5 39.1c1.5 1.5 4 1.5 5.5 0s1.5-4 0-5.5l-8.4-8.4c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5c4.3 4.3 4.1 4 8.4 8.4zM13.3 18.8c1.5 1.5 4 1.5 5.5 0s1.5-4 0-5.5l-8.4-8.4c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5c4.3 4.3 4 4.1 8.4 8.4z"
-                                                                data-original="#000000" class="prefix__active-path"
-                                                                fill="#fff">
-                                                            </path>
-                                                        </svg>
-                                                        <span>HeyLink.me</span>
-                                                    </div>
-                                                    <div class="qr-code-dropdown-user-link">
-                                                        <span>https://heylink.me/FahadMuhayya</span>
-                                                    </div>
-                                                    <img src="https://cdn-b.heylink.me/media/users/qr_codes/6e362a80929545c69836717ff2d69c69.png"
-                                                        alt="">
-                                                </div>
-                                                <div class="dropdow-menu__footer">
-                                                    <div class="download-qr-code-btn" id="downloadQrCodeBtn"
-                                                        data-image="https://s3-ap-southeast-2.amazonaws.com/cdn-b.heylink.me/media/users/qr_codes/6e362a80929545c69836717ff2d69c69.png">
-                                                        <div class="icon"></div>
-                                                        <div class="text">Download QR Code</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="preview-share-icon__component" id="shareIconDropdown">
-                                    <button id="share-show-btn">
-                                        <svg xmlns="https://www.w3.org/2000/svg" width="30" height="30"
-                                            viewBox="0 0 30 30">
-                                            <path
-                                                d="M24.112 29.996c-3.304 0-5.892-2.577-5.892-5.866 0-.935.039-1.606.114-2.102l-7.543-3.934c-1.096 1.642-2.977 2.716-4.907 2.716-3.304 0-5.891-2.577-5.891-5.867 0-3.288 2.587-5.866 5.891-5.866 1.26 0 2.514.624 3.051.891.345.173.834.608 1.308 1.078l8.007-5.763c.285-3.005 2.757-5.28 5.862-5.28 3.304 0 5.892 2.576 5.892 5.865s-2.588 5.866-5.892 5.866c-1.636 0-3.155-.662-4.171-1.817a1.102 1.102 0 01.104-1.561 1.112 1.112 0 011.569.104c.584.664 1.518 1.061 2.498 1.061 2.058 0 3.67-1.604 3.67-3.653 0-2.048-1.612-3.652-3.67-3.652-2.056 0-3.669 1.604-3.669 3.652 0 .355-.17.689-.459.897l-9.225 6.641a1.115 1.115 0 01-1.472-.149c-.539-.586-1.18-1.204-1.371-1.322-.337-.167-1.296-.644-2.032-.644-2.058 0-3.67 1.604-3.67 3.652 0 2.049 1.612 3.653 3.67 3.653 1.588 0 2.946-1.239 3.412-2.403a1.11 1.11 0 01.648-.627c.295-.11.621-.088.901.057l9.337 4.87a1.103 1.103 0 01.401 1.607c-.041.143-.14.641-.14 2.03 0 2.048 1.613 3.652 3.669 3.652 2.058 0 3.67-1.604 3.67-3.652s-1.612-3.652-3.67-3.652c-.708 0-.874.067-1.391.325a1.12 1.12 0 01-1.494-.495 1.105 1.105 0 01.5-1.485c.79-.395 1.298-.559 2.385-.559 3.304 0 5.892 2.577 5.892 5.866 0 3.289-2.588 5.866-5.892 5.866z"
-                                                fill="">
-                                            </path>
-                                        </svg>
-                                    </button>
-                                    <div class="share-dropdown__menu" id="share_profile_link">
-                                        <div class="dropdow-menu__wrapper">
-                                            <div class="dropdown-menu__close">
-                                                <div class="dropdown-menu-close-btn">
-                                                    <span>
-                                                        <svg xmlns="https://www.w3.org/2000/svg" version="1.1"
-                                                            id="prefix__Layer_1" x="0" y="0" viewBox="0 0 492 492"
-                                                            xml:space="preserve" width="512" height="512">
-                                                            <script type="text/javascript"></script>
-                                                            <path
-                                                                d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
-                                                                data-original="#000000" class="prefix__active-path"
-                                                                fill="#fff"></path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h4 class="dropdown-menu-title">Share Link</h4>
-                                            <div class="dropdow-menu__container">
-                                                <div class="dropdown-menu-item__wrapper facebook">
-                                                    <div class="dropdown-menu__item">
-                                                        <div class="dropdown-item__icon">
-                                                            <svg class="fb-share-icon__svg"
-                                                                xmlns="https://www.w3.org/2000/svg" width="152"
-                                                                height="150" viewBox="0 0 152 150">
-                                                                <path
-                                                                    d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
-                                                                    fill="#E8F1FE"></path>
-                                                                <path
-                                                                    d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
-                                                                    fill="#1575F2"></path>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="dropdown-item__text" id="shareFBProfile" role="link"
-                                                            data-shareurl="https://hl.ink/jVr4thhh">Facebook</div>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-menu-item__wrapper telegram">
-                                                    <div class="dropdown-menu__item">
-                                                        <div class="dropdown-item__icon">
-                                                            <svg class="fb-share-icon__svg"
-                                                                xmlns="https://www.w3.org/2000/svg" width="152"
-                                                                height="150" viewBox="0 0 152 150">
-                                                                <path
-                                                                    d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
-                                                                    fill="#E6F3FF"></path>
-                                                                <path
-                                                                    d="M67.081 99.612l.994-15.661L95.344 58.33c1.207-1.147-.249-1.703-1.846-.703l-33.66 22.178-14.558-4.814c-3.125-.925-3.16-3.184.71-4.813l56.704-22.807c2.592-1.221 5.078.667 4.083 4.814l-9.658 47.427c-.674 3.37-2.627 4.184-5.325 2.629L77.093 90.912l-7.065 7.146c-.817.851-1.492 1.554-2.947 1.554z"
-                                                                    fill="#08C"></path>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="dropdown-item__text" id="shareTelegramProfile"
-                                                            role="link" data-shareurl="https://hl.ink/jVr4thhh">Telegram
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-menu-item__wrapper linkedin">
-                                                    <div class="dropdown-menu__item">
-                                                        <div class="dropdown-item__icon">
-                                                            <svg class="fb-share-icon__svg"
-                                                                xmlns="https://www.w3.org/2000/svg" width="152"
-                                                                height="150" viewBox="0 0 152 150">
-                                                                <path
-                                                                    d="M75.625 0c41.421 0 75 33.579 75 75s-33.579 75-75 75-75-33.579-75-75 33.579-75 75-75z"
-                                                                    fill="#E2F1F8"></path>
-                                                                <path
-                                                                    d="M101.106 105.942h-6.894l-.071-13.415c-.071-14.448-.035-13.762-.677-15.563-.737-2.079-2.057-3.391-4.006-3.983-1.093-.325-3.209-.349-4.266-.035-1.949.569-3.399 1.777-4.374 3.623-1.046 1.975-.962.709-1.022 15.924L79.76 106H65.891l-.072-20.069c-.047-11.034-.106-20.778-.142-21.661l-.072-1.591h11.897l.06.372c.083.464.665 5.342.665 5.54 0 .302.262.069.88-.802 1.735-2.404 3.981-4.123 6.643-5.052.987-.348 2.865-.79 3.828-.906.998-.128 4.385-.069 5.466.093 1.771.267 2.817.581 4.397 1.336 4.695 2.241 7.465 6.724 8.403 13.588.119.837.155 4.449.155 15.099v13.995h-6.893zM47.034 56.221a6.633 6.633 0 01-2.971-4.61c-.19-1.336.047-2.857.63-4.007.808-1.626 2.722-3.043 4.623-3.438 1.01-.221 2.947-.221 3.946-.012 1.331.268 2.294.79 3.316 1.789 1.403 1.37 2.044 2.927 2.044 4.901-.012 1.684-.606 3.171-1.759 4.332-2.496 2.544-6.81 2.997-9.829 1.045zm11.196 6.458V106H44.444V62.679H58.23z"
-                                                                    fill="#08C"></path>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="dropdown-item__text" id="shareLinkedinProfile"
-                                                            role="link" data-shareurl="https://hl.ink/jVr4thhh">LinkedIn
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dropdow-menu__footer">
-                                                <div class="share-link">
-                                                    <div class="share-link--wrapper">
-                                                        <span class="link-text"
-                                                            title="https://hl.ink/jVr4thhh">https://hl.ink/jVr4thhh</span>
-                                                        <span class="icon copy" title="https://hl.ink/jVr4thhh"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="username" style="">FahadMuhayya</div>
-                            <div class="preview-user-description__component" style="">
-                                <div class="description-wrapper">
-                                    <p>sdsaddsdsdsadasdsad</p>
-                                </div>
-                                <div class="highlights-wrapper">
-                                    <div class="highlights-title"> razan razan</div>
-                                    <ul>
-                                        <li>razan test</li>
-                                        <li>razan test</li>
-                                        <li>razan</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- social media  -->
-                        <div class="preview-social-links__component">
-                            <a class="social-link-item-button__component whatsapp " href="https://wa.me/5555555555555"
-                                data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="650913950880403456000000-1" data-ip="162.158.165.67" target="_blank"
-                                style="        background: linear-gradient(0deg, rgba(46,153,33,1) 0%, rgba(94,227,87,1) 100%);">
-                                <div class="icon">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 26 26">
-                                        <g id="ic_whatsapp">
-                                            <path id="WhatsApp"
-                                                d="M13.017,-0.006 C5.860,-0.006 0.037,5.813 0.037,12.967 C0.037,15.289 0.653,17.551 1.824,19.538 C1.824,19.538 0.004,26.001 0.004,26.001 C0.004,26.001 6.671,24.285 6.671,24.285 C8.603,25.368 10.787,25.939 13.017,25.939 C20.174,25.939 25.996,20.120 25.996,12.967 C25.996,5.813 20.174,-0.006 13.017,-0.006 zM21.370,16.863 C21.370,16.863 21.210,17.610 21.210,17.610 C21.030,18.453 20.529,19.198 19.802,19.663 C18.884,20.249 17.695,20.537 16.184,20.110 C11.493,18.784 8.840,15.681 7.416,13.741 C5.993,11.801 5.443,9.861 5.799,8.276 C6.037,7.214 6.814,6.399 7.301,5.977 C7.539,5.770 7.847,5.665 8.163,5.682 C8.163,5.682 9.165,5.737 9.165,5.737 C9.362,5.747 9.536,5.870 9.614,6.051 C9.614,6.051 11.074,9.466 11.074,9.466 C11.152,9.648 11.120,9.859 10.990,10.009 C10.990,10.009 9.719,11.479 9.719,11.479 C9.616,11.598 9.597,11.768 9.670,11.907 C11.344,15.130 14.395,16.407 15.306,16.727 C15.461,16.781 15.633,16.730 15.734,16.599 C15.734,16.599 17.063,14.877 17.063,14.877 C17.211,14.685 17.472,14.621 17.692,14.722 C17.692,14.722 21.079,16.283 21.079,16.283 C21.300,16.384 21.421,16.625 21.370,16.863 z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="text">My WhatsApp</div>
-                            </a>
-                            <a class="social-link-item-button__component telegram"
-                                href="https://telegram.me/FahadMuhayya" data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="631534865447458119942144-1" data-ip="162.158.165.67" target="_blank"
-                                style="background: linear-gradient(180deg, rgba(78,178,235,1) 0%, rgba(37,130,198,1) 85%, rgba(44,138,198,1) 100%);">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 81">
-                                        <path
-                                            d="M5.9 35.3l57.2-24C68.7 8.7 87.9.7 87.9.7s8.8-3.5 8.1 5c-.2 3.5-2.2 15.8-4.2 29.1l-6.1 39.3s-.5 5.8-4.7 6.8-11-3.5-12.3-4.5c-1-.8-18.4-12-24.8-17.5-1.7-1.5-3.7-4.5.2-8 8.8-8.3 19.4-18.5 25.8-25 2.9-3 5.9-10-6.4-1.5L29 48s-3.9 2.5-11.3.3C10.3 46 1.7 43 1.7 43s-5.9-3.7 4.2-7.7z"
-                                            fill="#fff">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div class="text">My Telegram</div>
-                            </a>
-                            <a class="social-link-item-button__component twitter"
-                                href="https://www.twitter.com/Fahadmuhayya" data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="618304990521000242446336-1" data-ip="172.68.144.56" target="_blank"
-                                style="background: linear-gradient(0deg, rgba(28,134,221,1) 0%, rgba(84,198,247,1) 100%);">
-                                <div class="icon">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 25"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <g id="ic_twitter">
-                                            <path id="twitter"
-                                                d="M0.224,21.695 C3.001,23.355 6.294,24.315 9.826,24.315 C19.745,24.315 27.786,16.738 27.786,7.392 C27.786,7.158 27.782,6.927 27.771,6.696 C28.131,6.430 30.350,4.754 30.894,3.676 C30.894,3.676 29.091,4.382 27.328,4.548 C27.324,4.548 27.320,4.549 27.317,4.549 C27.317,4.549 27.320,4.547 27.326,4.543 C27.488,4.441 29.760,2.984 30.068,1.247 C30.068,1.247 28.794,1.888 27.009,2.449 C26.713,2.542 26.404,2.633 26.085,2.717 C24.935,1.560 23.300,0.838 21.485,0.838 C18.003,0.838 15.182,3.495 15.182,6.773 C15.182,7.236 15.238,7.686 15.345,8.118 C14.859,8.100 7.450,7.708 2.410,1.957 C2.410,1.957 -0.602,5.832 4.205,9.816 C4.205,9.816 2.744,9.761 1.483,9.052 C1.483,9.052 1.020,13.746 6.464,14.946 C6.464,14.946 5.393,15.328 3.684,15.056 C3.684,15.056 4.639,18.849 9.477,19.203 C9.477,19.203 5.652,22.459 0.222,21.695 C0.222,21.695 0.224,21.695 0.224,21.695 z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="text">My Twitter</div>
-                            </a>
-                            <a class="social-link-item-button__component instagram"
-                                href="https://www.instagram.com/FahadMuhayya" data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="618297559796765672144896-1" data-ip="172.68.144.56" target="_blank"
-                                style="background: linear-gradient(270deg, rgba(245,132,60,1) 0%, rgba(215,57,122,1) 55%, rgba(89,89,206,1) 100%);">
-                                <div class="icon">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <g id="ic_instagram">
-                                            <path id="instagram"
-                                                d="M23.913,18.045 C23.848,19.464 23.613,20.229 23.416,20.737 C22.942,21.965 21.966,22.942 20.736,23.416 C20.229,23.613 19.464,23.848 18.044,23.913 C16.471,23.985 15.999,24.000 12.000,24.000 C8.001,24.000 7.529,23.985 5.955,23.913 C4.535,23.848 3.771,23.613 3.259,23.414 C2.652,23.191 2.094,22.827 1.637,22.357 C1.173,21.907 0.810,21.348 0.584,20.736 C0.387,20.228 0.152,19.463 0.087,18.045 C0.015,16.463 -0.000,15.989 -0.000,12.000 C-0.000,8.011 0.015,7.537 0.087,5.955 C0.152,4.536 0.387,3.771 0.585,3.259 C0.810,2.652 1.173,2.093 1.643,1.637 C2.094,1.173 2.652,0.809 3.264,0.584 C3.771,0.387 4.536,0.152 5.955,0.087 C7.530,0.015 8.002,-0.000 12.000,-0.000 C15.989,-0.000 16.463,0.015 18.045,0.087 C19.463,0.152 20.228,0.387 20.741,0.586 C21.347,0.809 21.906,1.173 22.363,1.643 C22.827,2.093 23.190,2.652 23.416,3.264 C23.613,3.770 23.848,4.534 23.913,5.955 C23.985,7.528 24.000,8.001 24.000,12.000 C24.000,15.999 23.985,16.471 23.913,18.045 zM12.000,4.012 C7.595,4.012 4.011,7.595 4.011,12.000 C4.011,16.405 7.595,19.988 12.000,19.988 C16.405,19.988 19.989,16.405 19.989,12.000 C19.989,7.595 16.405,4.012 12.000,4.012 zM20.002,1.908 C18.850,1.908 17.913,2.845 17.913,3.997 C17.913,5.149 18.850,6.087 20.002,6.087 C21.154,6.087 22.091,5.149 22.092,3.997 C22.092,2.845 21.155,1.908 20.002,1.908 zM12.000,16.707 C9.405,16.707 7.293,14.595 7.293,12.000 C7.293,9.404 9.405,7.293 12.000,7.293 C14.595,7.293 16.707,9.404 16.707,12.000 C16.707,14.595 14.595,16.707 12.000,16.707 z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="text">My Instagram</div>
-                            </a>
-                            <a class="social-link-item__component email" href="mailto:Swipyysa@gmail.com"
-                                data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="618312421289885911547904-1" data-ip="172.68.144.56" target="_blank"
-                                style="">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 77">
-                                    <g fill-rule="nonzero">
-                                        <path
-                                            d="M92.8 46.5c2.1 0 3.8-1.7 3.8-3.8V15.2C96.6 6.9 89.8.1 81.5.1H15.1C6.8.1 0 6.9 0 15.2v46.4c0 8.3 6.8 15.1 15.1 15.1h66.4c8.3 0 15.1-6.8 15.1-15.1 0-2.1-1.7-3.8-3.8-3.8-2.1 0-3.8 1.7-3.8 3.8 0 4.2-3.4 7.5-7.5 7.5H15.1c-4.2 0-7.5-3.4-7.5-7.5V15.2c0-4.2 3.4-7.5 7.5-7.5h66.4c4.2 0 7.5 3.4 7.5 7.5v27.5c0 2.1 1.7 3.8 3.8 3.8z">
-                                        </path>
-                                        <path
-                                            d="M72.2 18.8L48.3 38l-24-19.3c-1.7-1.4-4.2-1.2-5.6.5-1.4 1.7-1.2 4.2.5 5.6l26.2 21.1c.8.6 1.7.9 2.7.9H48.4c.9 0 1.8-.3 2.5-.9l26.2-21.1c1.7-1.4 1.9-3.9.5-5.6-1.2-1.6-3.7-1.8-5.4-.4z">
-                                        </path>
-                                    </g>
-                                </svg>
-
-                            </a>
-                            <a class="social-link-item__component youtube"
-                                href="https://www.youtube.com/channel/UC68oUyPqzfrAGzERFFrYJjA" data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="618394162694600792473600-1" data-ip="172.68.144.56" target="_blank"
-                                style="">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97">
-                                    <g fill-rule="nonzero">
-                                        <path
-                                            d="M40.2 28c-2.5-1.5-5.7.3-5.7 3.2v35.1c0 2.9 3.2 4.7 5.7 3.2L69.6 52c2.4-1.5 2.4-5 0-6.5L40.2 28zm1.9 31.7V37.9l18.3 10.9-18.3 10.9z">
-                                        </path>
-                                        <path
-                                            d="M94.8 21.6c-1.6-9.9-8.7-17.4-17.9-18.9C65.5.9 62.6.3 48.9.3 35.3.3 32.4.9 21 2.7c-9.1 1.4-16.3 9-17.9 18.9C1.6 30.9.9 39.6.9 48.4s.7 17.5 2.2 26.8c1.6 9.9 8.7 17.4 17.9 18.9 11.4 1.8 14.3 2.4 28 2.4 13.6 0 16.5-.6 27.9-2.4 9.1-1.4 16.3-9 17.9-18.9.1-.8.2-1.6.4-2.5 0-1.9-1.4-3.5-3.4-3.7-1.7-.2-3.2.8-3.8 2.3-.1.9-.3 1.7-.4 2.6-1 6.5-5.7 11.5-11.7 12.5-22.1 3.5-31.6 3.5-53.7 0-6-.9-10.7-5.9-11.7-12.5C9.1 65 8.4 56.7 8.4 48.4s.7-16.5 2.1-25.5c1-6.5 5.7-11.5 11.7-12.5 22.1-3.5 31.6-3.5 53.7 0 6 .9 10.7 5.9 11.7 12.5 1.4 8.9 2.1 17.2 2.1 25.5 0 2 0 4-.1 5.9.2 1.8 1.5 3.2 3.4 3.4 1.8.2 3.3-.9 3.9-2.4.1-2.3.1-4.6.1-6.9 0-8.8-.7-17.5-2.2-26.8z">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </a>
-                            <a class="social-link-item__component facebook" href="https://m.facebook.com/SwipyySA"
-                                data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="618319852103422679449600-1" data-ip="172.68.144.56" target="_blank"
-                                style="">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97">
-                                    <g fill-rule="nonzero">
-                                        <path
-                                            d="M93 66.5c2.1 0 3.8-1.7 3.8-3.8V15.2C96.8 6.9 90 .1 81.7.1H15.3C7 .1.2 6.9.2 15.2v66.4c0 8.3 6.8 15.1 15.1 15.1h66.4c8.3 0 15.1-6.8 15.1-15.1 0-2.1-1.7-3.8-3.8-3.8-2.1 0-3.8 1.7-3.8 3.8 0 4.2-3.4 7.5-7.5 7.5H63.2V61.6h8.7c1.9 0 3.5-1.4 3.7-3.3l.5-4.1c.3-2.2-1.5-4.2-3.7-4.2h-9.2V37.4c0-3.1 2.5-5.7 5.7-5.7h4.7c2.1 0 3.8-1.7 3.8-3.8V24c0-1.9-1.5-3.6-3.4-3.8-1.9-.2-3.9-.4-5.1-.4-4.4 0-8.8 1.9-12.1 5.1-3.4 3.3-5.3 7.7-5.3 12.3v12.6H43c-2.1 0-3.8 1.7-3.8 3.8v4.1c0 2.1 1.7 3.8 3.8 3.8h8.5V89H15.3c-4.2 0-7.5-3.4-7.5-7.5V15.1c0-4.2 3.4-7.5 7.5-7.5h66.4c4.2 0 7.5 3.4 7.5 7.5v47.5c0 2.2 1.7 3.9 3.8 3.9z"
-                                            fill-rule="nonzero">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </a>
-                            <a class="social-link-item__component snapchat"
-                                href="https://www.snapchat.com/add/FahadMuhayya" data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="618290129117182200643584-1" data-ip="172.68.144.56" target="_blank"
-                                style="">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-                                    <g fill-rule="nonzero">
-                                        <path
-                                            d="M93.225 72.5248C92.7395 72.4052 92.2458 72.3184 91.7679 72.1703C88.4027 71.1302 85.5497 69.5402 83.1395 67.4235C82.4989 66.7021 81.5925 66.2506 80.5859 66.2506C78.6441 66.2506 77.0703 67.9224 77.0703 69.9851C77.0703 71.2863 77.6979 72.4307 78.6482 73.0996C79.0506 73.4555 79.4584 73.8034 79.8759 74.1346C78.059 75.1885 76.6981 76.8223 75.9675 78.842C75.4903 78.7829 75.0021 78.7282 74.5008 78.683C73.7696 78.6173 73.0486 78.5823 72.3585 78.5787L72.2342 78.5779C67.7827 78.5779 63.9766 79.8288 60.5983 82.4028L60.2468 82.6705C58.5569 83.9593 56.9612 85.1767 55.4121 86.0286C53.5746 87.0395 51.8251 87.5311 50.0625 87.5311C48.2882 87.5311 46.5091 87.0351 44.6222 86.0147C43.4137 85.3612 42.3301 84.6187 41.4011 83.8091C37.3094 80.2417 32.5853 78.4197 27.3585 78.392L27.2336 78.3912C26.1445 78.3912 25.0178 78.4685 23.8642 78.621C23.0725 76.5576 21.9025 75.1564 20.144 74.1885C23.4179 71.5328 26.3231 68.0209 28.9007 63.622C29.7941 62.0961 30.5974 60.4513 31.2875 58.7322C31.8753 57.2668 32.1966 55.7971 32.242 54.3646C32.3209 51.868 31.6151 49.5835 30.2376 47.7076C30.3866 47.5661 30.5308 47.4187 30.6702 47.2648C31.7709 46.0475 33.057 43.8812 32.9293 40.4728C32.8922 39.4874 32.8483 38.4954 32.8057 37.5363C32.6986 35.1104 32.5976 32.8194 32.5976 30.5838C32.5976 29.3417 32.6333 28.2287 32.7082 27.1813C33.1387 21.0975 36.0391 16.9451 41.5742 14.4864C44.8 13.0531 47.4958 12.4689 50.8789 12.4689C54.8511 12.4689 58.5027 13.8722 62.043 16.7598C65.7674 19.7984 67.5781 23.8414 67.5781 29.12C67.5781 32.7545 67.3824 36.5546 67.1647 40.4531C66.978 43.8024 68.2414 45.9745 69.3345 47.2065C69.4739 47.364 69.6188 47.515 69.7678 47.6587C68.3561 49.4435 67.585 51.5952 67.5781 53.9044C67.5733 55.6527 68.1542 57.0451 68.514 57.8671C69.018 59.2741 70.2958 60.2748 71.7968 60.2748C73.7387 60.2748 75.3125 58.6031 75.3125 56.5404C75.3125 55.7577 75.0845 55.032 74.6972 54.4317C74.6437 54.2589 74.6087 54.0904 74.6093 53.927C74.6121 52.9051 75.3145 52.0678 76.3637 51.4332C77.5427 50.7214 79.0073 50.3049 80.2336 49.6718C81.8253 48.8498 83.4691 48.2984 84.8294 47.1452C84.841 47.135 84.852 47.124 84.8644 47.1138C84.9049 47.0796 84.944 47.0431 84.9832 47.0066C84.9852 47.0052 84.9873 47.003 84.99 47.0008C85.7241 46.3159 86.1903 45.3144 86.1903 44.1948C86.1903 42.1329 84.6165 40.4604 82.6747 40.4604C82.6149 40.4604 82.5566 40.467 82.4975 40.4699C82.4824 40.4699 82.47 40.4684 82.4556 40.4684C81.7717 40.4684 80.0682 40.9994 79.341 41.2875C78.1153 41.7733 76.6947 42.1198 75.3983 42.3247C75.3008 42.34 75.2081 42.348 75.1216 42.348C74.4576 42.348 74.1287 41.8893 74.1836 40.8958C74.4027 36.9754 74.6093 33.0119 74.6093 29.12C74.6093 21.6204 71.8779 15.3653 66.325 10.8365C61.4539 6.86284 56.2443 5 50.8789 5C46.4844 5 42.9021 5.80086 38.8612 7.59587C31.1289 11.0305 26.343 17.4965 25.6962 26.6204C25.6035 27.9376 25.5664 29.2593 25.5664 30.5838C25.5664 33.9456 25.7765 37.3795 25.9035 40.7689C25.944 41.8579 25.6282 42.3663 24.8708 42.3663C24.7747 42.3663 24.671 42.3583 24.5605 42.3422C23.1803 42.1387 21.7699 41.7551 20.4687 41.2496C20.0808 41.0993 19.4072 40.8718 18.7851 40.7062C18.4665 40.5873 18.1287 40.5173 17.7764 40.5012C17.7222 40.4969 17.6707 40.4932 17.6253 40.4932C17.5677 40.4932 17.5155 40.4969 17.466 40.502C15.5991 40.591 14.1097 42.2226 14.1097 44.2277C14.1097 45.4158 14.6336 46.4727 15.448 47.1569C15.448 47.1576 15.4494 47.1605 15.4494 47.1605C15.4638 47.1715 15.4796 47.1817 15.4933 47.1926C15.5812 47.2634 15.6712 47.3305 15.7645 47.3925C16.9895 48.275 18.5214 48.9023 19.8638 49.5624C20.9899 50.116 22.2327 50.5492 23.3279 51.1583C24.6813 51.9103 25.254 52.8716 25.2148 54.1137C25.1984 54.6272 25.0658 55.1888 24.8193 55.803C24.2837 57.137 23.652 58.4433 22.931 59.6745C19.0941 66.2244 14.1049 71.0668 6.70975 72.5379C5.68459 72.7422 5 73.9785 5 74.4613V74.6801C5.45525 76.3978 6.5889 77.5203 8.0851 78.0667C10.3915 78.9076 12.7447 79.6363 15.1184 80.2264C17.2731 80.7617 17.2971 80.6516 17.7551 82.9141C18.3628 85.9126 18.7109 86.7937 20.4687 86.7937C21.0723 86.7937 21.8386 86.5807 22.837 86.3648C24.3359 86.0403 25.8026 85.8601 27.2336 85.8601C27.2638 85.8601 27.294 85.8601 27.3242 85.8608C30.7588 85.8791 33.984 87.0052 36.9407 89.5829C38.3119 90.7776 39.8493 91.8148 41.432 92.6704C44.2953 94.2188 47.1799 95 50.0625 95C52.934 95 55.8042 94.2239 58.6462 92.6601C60.7734 91.4902 62.74 89.9622 64.6956 88.472C67.0452 86.6828 69.5288 86.0468 72.2342 86.0468H72.3242C72.8433 86.0497 73.3699 86.0767 73.9062 86.1249C75.4759 86.2671 77.0311 86.5355 78.5974 86.7266C78.9524 86.7704 79.2655 86.7937 79.5436 86.7937C80.9862 86.7937 81.4895 86.1497 81.9317 84.2248C82.1089 83.4531 82.3039 82.6844 82.433 81.9032C82.5717 81.0637 83.0805 80.6421 83.9141 80.4211C86.7623 79.6684 89.5995 78.8362 92.3722 77.8216C93.2346 77.5058 94.0503 76.6385 94.5818 75.8034C95.5053 74.3526 94.8317 72.9201 93.225 72.5248Z">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </a>
-                            <a class="social-link-item__component tiktok"
-                                href="https://www.snapchat.com/add/FahadMuhayya" data-action="send_click"
-                                data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/" data-userid="295312"
-                                data-linkid="603591532582096412606464-1" data-ip="172.68.144.56" target="_blank"
-                                style="">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 98" fill="none">
-                                    <g fill-rule="nonzero">
-                                        <path
-                                            d="M82.2 23.1c-10.3 0-18.7-8.4-18.7-18.7 0-2.1-1.7-3.8-3.8-3.8H45.3c-.5 0-1 .1-1.5.3-1.4.6-2.3 1.9-2.3 3.5v61.8c0 4.1-2.6 7.6-6.5 8.9-1 .3-2 .5-3 .5-5.2 0-9.4-4.2-9.4-9.4s4.2-9.4 9.4-9.4c2.1 0 3.8-1.7 3.8-3.8V38.6c0-2.1-1.7-3.8-3.8-3.8-8.4 0-16.3 3.3-22.2 9.2C3.9 49.9.6 57.8.6 66.2c0 8.4 3.3 16.3 9.2 22.2 5.9 5.9 13.8 9.2 22.2 9.2 1.6 0 3.2-.1 4.7-.3 6.7-1 12.7-4.1 17.5-8.9 1.5-1.5 1.5-3.9 0-5.4-1.5-1.5-3.9-1.5-5.4 0-3.6 3.6-8.2 6-13.3 6.7-1.2.2-2.4.3-3.6.3-6.4 0-12.4-2.5-16.9-7-4.5-4.5-7-10.5-7-16.9 0-6.4 2.5-12.4 7-16.9 3.6-3.6 8.1-5.9 13.1-6.7v7c-7.6 1.7-13.2 8.5-13.2 16.6 0 9.4 7.6 17 17 17 1.8 0 3.6-.3 5.3-.9 6.9-2.3 11.6-8.8 11.7-16.1v-58H56c1.7 11.4 10.8 20.5 22.2 22.2v6.9c-3.1-.4-6.2-1.2-9.1-2.4-2.6-1.1-5.1-2.5-7.3-4.2-1.1-.9-2.7-1-4-.4-1.3.6-2.1 2-2.1 3.4v32.6c0 2.1 1.7 3.8 3.8 3.8 2.1 0 3.8-1.7 3.8-3.8V40.4c.9.5 1.9.9 2.9 1.3 5 2.1 10.4 3.2 15.9 3.2 2.1 0 3.8-1.7 3.8-3.8V26.7c.1-1.9-1.6-3.6-3.7-3.6z">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                        <!-- messages form -->
-                        <div class="preview-anonymous-messages__component">
-                            <div class="link-underlayer" style=""></div>
-                            <div class="preview-anonymous-messages-wrapper">
-                                <div class="preview-anonymous-messages-content pseudo-input-preview">
-                                    <form id="anonymousMessagesForm" class="direct-messages" method="post"
-                                        action="/message/" data-username="FahadMuhayya" novalidate="novalidate">
-                                        <div class="form-field input-field message">
-                                            <div class="field">
-                                                <input type="text" name="message" autocomplete="off" required
-                                                    placeholder="تفضل بترك رسالتك هنا" class="form-input"
-                                                    id="anonymousMessagesTextInput" />
-                                                <div id="anonymousMessagesTextInput-error"
-                                                    class="validation-error validation-async__error"></div>
-                                                <span class="max-characters"
-                                                    id="anonymousMessagesTextInputMaxCharacters">
-                                                    <i>512</i>
-                                                    characters remaining
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-field input-field">
-                                            <div class="field">
-                                                <input type="text" name="name" autocomplete="off" required="true"
-                                                    data-required="True" placeholder="Your name" class="form-input"
-                                                    id="anonymousMessagesNameInput" />
-                                                <div id="anonymousMessagesNameInput-error"
-                                                    class="validation-error validation-async__error"></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-field input-field">
-                                            <div class="field">
-                                                <input type="text" name="email" autocomplete="off" required="true"
-                                                    data-required="True" placeholder="Your email" class="form-input"
-                                                    id="anonymousMessagesEmailInput" />
-                                                <div id="anonymousMessagesEmailInput-error"
-                                                    class="validation-error validation-async__error"></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-field">
-                                            <button type="submit">
-                                                <span>Send Message</span>
-                                                <div class="arrow">
-                                                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                        <path
-                                                            d="M19.5 9.3L1.2.1C1.1 0 .9 0 .8 0 .6 0 .5.1.3.2.2.3.1.4.1.6 0 .7 0 .9.1 1l2.5 9-2.5 9v.4c0 .1.1.2.2.3.1.1.2.2.3.2 0 .1.1.1.3.1.1 0 .3 0 .4-.1l18.3-9.2c.1-.1.3-.2.3-.3s.1-.2.1-.4 0-.3-.1-.4c-.1-.2-.2-.3-.4-.3zM2.2 17.6L4 10.8l5-.8-5-.8-1.8-6.8L17.3 10 2.2 17.6z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="preview-anonymous-messages-content click-button"></div>
-                            </div>
-                        </div>
-                        <!-- links -->
-                        <div class="preview-links-list__component">
-
-                            <div class="preview-link-item__component theme-class-07-christmas-pro wobble">
-                                <div class="link-underlayer" data-id="700310" style=""></div>
-                                <a href="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me"
-                                    data-action="send_click"
-                                    data-apiurl="https://api.heylink.me/api/v1/analytics/set-click/"
-                                    data-userid="295312" data-linkid="10949210639956285122150400-0"
-                                    data-ip="172.68.144.112" data-id="700310" target="_blank"
-                                    class="preview-link-wrapper" style="">
-                                    <div class="lazy thumbnail entered loaded"
-                                        data-bg="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=96/https://cdn-b.heylink.me/media/links/thumbnails/c55c06551e7749ee88fdeb10ce750e96.png"
-                                        data-ll-status="loaded" style="background-image: url("
-                                        https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=96/https://cdn-b.heylink.me/media/links/thumbnails/c55c06551e7749ee88fdeb10ce750e96.png");">
-                                    </div>
-                                    <div class="link-info left" data-id="700310">
-                                        <div class="name" style="">sewarsa.com</div>
-                                    </div>
-                                   
-                                </a>
-                                <div class="share-dropdown__menu share-dropdown-links"
-                                    id="share_dropdown_menu_public_link_700310">
-                                    <div class="dropdow-menu__wrapper">
-                                        <div class="dropdown-menu__close">
-                                            <div class="dropdown-menu-close-btn">
-                                                <span>
-                                                    <svg xmlns="https://www.w3.org/2000/svg" version="1.1"
-                                                        id="prefix__Layer_1" x="0" y="0" viewBox="0 0 492 492"
-                                                        xml:space="preserve" width="512" height="512">
-                                                        <script type="text/javascript"></script>
-                                                        <path
-                                                            d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
-                                                            data-original="#000000" class="prefix__active-path"
-                                                            fill="#fff"></path>
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <h4 class="dropdown-menu-title">Share Link</h4>
-                                        <div class="dropdow-menu__container">
-                                            <div class="dropdown-menu-item__wrapper facebook">
-                                                <div class="dropdown-menu__item">
-                                                    <div class="dropdown-item__icon">
-                                                        <svg class="fb-share-icon__svg"
-                                                            xmlns="https://www.w3.org/2000/svg" width="152" height="150"
-                                                            viewBox="0 0 152 150">
-                                                            <path
-                                                                d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
-                                                                fill="#E8F1FE"></path>
-                                                            <path
-                                                                d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
-                                                                fill="#1575F2"></path>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="dropdown-item__text" id="shareFB" role="link"
-                                                        data-shareurl="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me">
-                                                        Facebook</div>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown-menu-item__wrapper facebook">
-                                                <div class="dropdown-menu__item">
-                                                    <div class="dropdown-item__icon">
-                                                        <svg class="fb-share-icon__svg"
-                                                            xmlns="https://www.w3.org/2000/svg" width="152" height="150"
-                                                            viewBox="0 0 152 150">
-                                                            <path
-                                                                d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
-                                                                fill="#E8F1FE"></path>
-                                                            <path
-                                                                d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
-                                                                fill="#1575F2"></path>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="dropdown-item__text" id="shareFB" role="link"
-                                                        data-shareurl="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me">
-                                                        Facebook</div>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown-menu-item__wrapper facebook">
-                                                <div class="dropdown-menu__item">
-                                                    <div class="dropdown-item__icon">
-                                                        <svg class="fb-share-icon__svg"
-                                                            xmlns="https://www.w3.org/2000/svg" width="152" height="150"
-                                                            viewBox="0 0 152 150">
-                                                            <path
-                                                                d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
-                                                                fill="#E8F1FE"></path>
-                                                            <path
-                                                                d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
-                                                                fill="#1575F2"></path>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="dropdown-item__text" id="shareFB" role="link"
-                                                        data-shareurl="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me">
-                                                        Facebook</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="dropdow-menu__footer">
-                                            <div class="share-link">
-                                                <div class="share-link--wrapper">
-                                                    <span class="link-text"
-                                                        title="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me">https://sewarsa.com/?utm_medium=social&utm_source=heylink.me</span>
-                                                    <span class="icon copy"
-                                                        data-shareurl="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- location -->
-
-                        <div class="location" data-id="3517">
-                            <div id="3517" data-id="3517" class="preview-location-item__component theme-class-21-pro"
-                                style="">
-                                <div class="link-underlayer" data-id="3517"></div>
-                                <div class="preview-location-link-wrapper" data-id="3517">
-                                    <div class="map-title-wrapper left" data-id="3517">
-                                        <div class="map-title ">Prince Sultan Rd, Al Zahra, Jeddah 23522, Saudi Arabia
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="location-up hidden" data-id="3517">
-                                <button class="location-btn-up" data-id="3517">
-                                    <img src="https://cdn-f.heylink.me/static/img/ic_shewron_up.svg" alt="up">
-                                </button>
-                            </div>
-                        </div>
-
-                        <script type="text/javascript">
-                            window.addEventListener('load', function () { initMap('map3517', '[{"id": 3520, "lat": "21.6095820", "lng": "39.1410600", "title": "Prince Sultan Rd, Al Zahra, Jeddah 23522, Saudi Arabia"}]', 'False') });
-                        </script>
-
-                        <script async
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJoJEHkTzXE1nb0fu_85gdxkimXInAleI&callback=initMap&libraries=&v=weekly"
-                            type="text/javascript">
-                            </script>
-
-                        <div class="preview-email-sigup-generator__component bottom">
-                            <div class="link-underlayer"></div>
-                            <div class="preview-email-sigup-generator-wrapper" background-color="">
-                                <div class="preview-email-sigup-generator-content click-button">
-                                    <span class="base-text">Click to Subscribe</span>
-                                    <span class="success-text" style="">
-                                        <div class="icon">Thanks for Subscribing!</div>
-                                        <span></span>
-                                    </span>
-                                </div>
-                                <div class="preview-email-sigup-generator-content pseudo-input-preview">
-                                    <form id="emailSignupGeneratorForm" action="/signup-subscription/" method="post"
-                                        data-username="FahadMuhayya" novalidate="novalidate">
-                                        <div class="form-field input-field">
-                                            <div class="field">
-                                                <input type="text" name="email" autocomplete="off" required
-                                                    placeholder="Your email address" class="form-input"
-                                                    id="sigupGeneratorTextInput">
-                                                <div id="sigupGeneratorTextInput-error"
-                                                    class="validation-error validation-async__error"></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-field">
-                                            <button type="submit">
-                                                <span>Subscribe</span>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- image slider -->
-                        <div class="preview-image-sliders-list__component">
-                            <div class="preview-image-slider-item__component" style="background-color: #FFFFFF;">
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <img src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="user-page-section-footer center"></div>
-                </div>
-            </div>
+      <div class="user-page-section theme-class-21-pro">
+        <div class="user-page-section-background lazy entered">
+          <div id="bg-color">#c069d1</div>
         </div>
+        <div class="container">
+          <div
+            class="wrapper padded-bottom avatar-page-layout"
+            id="userWrapper"
+            style="min-height: 0px"
+          >
+            <div class="user-page-section-content">
+              <!-- div include the personal img - username - user description - highligts title and details -->
+              <div class="user-info">
+                <div class="logo-container">
+                  <div class="common-user-icon__component avatar-style-04">
+                    <div class="common-user-icon-wrapper"></div>
+                  </div>
+                  <div
+                    class="preview-share-icon__component qr-code__component"
+                    id="qrCodeIconDropdown"
+                  >
+                    <button id="qr-code-show-btn">
+                      <svg
+                        version="1.1"
+                        id="Слой_1"
+                        xmlns="https://www.w3.org/2000/svg"
+                        xmlns:xlink="https://www.w3.org/1999/xlink"
+                        x="0"
+                        y="0"
+                        viewBox="0 0 60 60"
+                        xml:space="preserve"
+                      >
+                        <style>
+                          .st1 {
+                            fill: "";
+                          }
+                        </style>
+                        <defs>
+                          <path id="SVGID_1_" d="M0 0h60v60H0z"></path>
+                        </defs>
+                        <clipPath id="SVGID_2_">
+                          <use xlink:href="#SVGID_1_" overflow="visible"></use>
+                        </clipPath>
+                        <g clip-path="url(#SVGID_2_)">
+                          <path
+                            class="st1"
+                            d="M57.6 34.3h-18c-1.3 0-2.4 1.1-2.4 2.5v20.8c0 1.4 1.1 2.5 2.4 2.5h18c1.3 0 2.4-1.1 2.4-2.5V36.7c0-1.3-1.1-2.4-2.4-2.4zm-2.4 20.8H42V39.2h13.1v15.9zM2.6 23.3h8.2c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5H5.1V5h12.8v9.2c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5V2.5C23 1.1 21.8 0 20.4 0H2.6C1.9 0 1.2.3.7.7.3 1.2 0 1.8 0 2.5v18.4c0 1.3 1.2 2.4 2.6 2.4zM2.5 60h15.4c1.4 0 2.5-1.1 2.5-2.5v-15c0-1.4-1.1-2.5-2.5-2.5H2.5C1.1 40 0 41.1 0 42.5v15C0 58.9 1.1 60 2.5 60zm2.6-15h10.3v10.1H5.1V45z"
+                          ></path>
+                          <path
+                            class="st1"
+                            d="M28.7 56.7c1.3 0 2.4-1.1 2.4-2.5V28.3h26.4c1.3 0 2.4-1.1 2.4-2.5s-1.1-2.5-2.4-2.5H28.7c-.6 0-1.3.3-1.7.7-.5.5-.7 1.1-.7 1.7v28.4c0 1.5 1.1 2.6 2.4 2.6zM2.4 34.2h16.3c1.3 0 2.4-1.1 2.4-2.5v-5c0-1.4-1.1-2.5-2.4-2.5-1.3 0-2.4 1.1-2.4 2.5v2.5H2.4c-1.3 0-2.4 1.1-2.4 2.5s1.1 2.5 2.4 2.5zM30.4 18c1.3 0 2.4-1.1 2.4-2.5V7.2c0-1.4-1.1-2.5-2.4-2.5-.7 0-1.3.3-1.7.7-.5.6-.7 1.2-.7 1.8v8.4c0 1.3 1 2.4 2.4 2.4zM40.4 18.3h17.2c1.3 0 2.4-1.1 2.4-2.5V2.5C60 1.1 58.9 0 57.6 0H40.4C39.1 0 38 1.1 38 2.5v13.4c0 1.3 1.1 2.4 2.4 2.4zm2.4-13.4h12.3v8.4H42.8V4.9z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </button>
+                    <div
+                      class="share-dropdown__menu qr-code-dropdown closable"
+                      id="qrCodeDropdown"
+                    >
+                      <div class="dropdow-menu__wrapper">
+                        <div class="dropdown-menu__close">
+                          <div class="dropdown-menu-close-btn">
+                            <span>
+                              <svg
+                                xmlns="https://www.w3.org/2000/svg"
+                                version="1.1"
+                                id="prefix__Layer_1"
+                                x="0"
+                                y="0"
+                                viewBox="0 0 492 492"
+                                xml:space="preserve"
+                                width="512"
+                                height="512"
+                              >
+                                <path
+                                  d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
+                                  class="prefix__active-path"
+                                  fill="#fff"
+                                ></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="dropdow-menu__container">
+                          <div class="qr-code-dropdown-content">
+                            <div class="qr-code-dropdown-header">
+                              <svg
+                                version="1.1"
+                                id="Layer_1"
+                                xmlns="https://www.w3.org/2000/svg"
+                                x="0"
+                                y="0"
+                                viewBox="0 0 43.9 43.9"
+                                xml:space="preserve"
+                              >
+                                <path
+                                  d="M34.6 9.3l7.1 7.1c2.5 2.5 2.5 6.6 0 9.2-.4.4-.7.8-1.1 1.1-1.3 1.2-3.3 1.2-4.5-.1-.9-.9-1.2-2.2-.8-3.4.2-.5.2-.4.5-1.2.4-.9.2-2.1-.6-2.8l-5.3-5.3-5.3-5.3c-.8-.8-1.9-.9-2.8-.6-.8.3-.7.3-1.2.5-1.1.4-2.5.2-3.4-.8-1.2-1.2-1.3-3.2-.1-4.5l1.1-1.1c2.5-2.5 6.6-2.5 9.2 0l7.2 7.2zM13.9 30.1l-5.3-5.3c-.7-.7-.9-1.8-.6-2.7.1-.3.4-1 .5-1.2.5-1.2.2-2.5-.7-3.5-1.2-1.2-3.2-1.3-4.5-.1l-1.1 1.1c-2.5 2.5-2.5 6.6 0 9.2l7.1 7.1 7.1 7.1c2.5 2.5 6.6 2.5 9.2 0 .4-.4.8-.7 1.1-1.1 1.2-1.3 1.2-3.3-.1-4.5-.9-.9-2.3-1.2-3.5-.7-.3.1-.9.4-1.2.5-.9.3-2 .1-2.7-.6l-5.3-5.3zM33.5 39.1c1.5 1.5 4 1.5 5.5 0s1.5-4 0-5.5l-8.4-8.4c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5c4.3 4.3 4.1 4 8.4 8.4zM13.3 18.8c1.5 1.5 4 1.5 5.5 0s1.5-4 0-5.5l-8.4-8.4c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5c4.3 4.3 4 4.1 8.4 8.4z"
+                                  class="prefix__active-path"
+                                  fill="#fff"
+                                ></path>
+                              </svg>
+                              <span>HeyLink.me</span>
+                            </div>
+                            <div class="qr-code-dropdown-user-link">
+                              <span>https://heylink.me/FahadMuhayya</span>
+                            </div>
+                            <img
+                              src="https://cdn-b.heylink.me/media/users/qr_codes/6e362a80929545c69836717ff2d69c69.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="dropdow-menu__footer">
+                            <div
+                              class="download-qr-code-btn"
+                              id="downloadQrCodeBtn"
+                              data-image="https://s3-ap-southeast-2.amazonaws.com/cdn-b.heylink.me/media/users/qr_codes/6e362a80929545c69836717ff2d69c69.png"
+                            >
+                              <div class="icon"></div>
+                              <div class="text">Download QR Code</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="preview-share-icon__component"
+                    id="shareIconDropdown"
+                  >
+                    <button id="share-show-btn">
+                      <svg
+                        xmlns="https://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M24.112 29.996c-3.304 0-5.892-2.577-5.892-5.866 0-.935.039-1.606.114-2.102l-7.543-3.934c-1.096 1.642-2.977 2.716-4.907 2.716-3.304 0-5.891-2.577-5.891-5.867 0-3.288 2.587-5.866 5.891-5.866 1.26 0 2.514.624 3.051.891.345.173.834.608 1.308 1.078l8.007-5.763c.285-3.005 2.757-5.28 5.862-5.28 3.304 0 5.892 2.576 5.892 5.865s-2.588 5.866-5.892 5.866c-1.636 0-3.155-.662-4.171-1.817a1.102 1.102 0 01.104-1.561 1.112 1.112 0 011.569.104c.584.664 1.518 1.061 2.498 1.061 2.058 0 3.67-1.604 3.67-3.653 0-2.048-1.612-3.652-3.67-3.652-2.056 0-3.669 1.604-3.669 3.652 0 .355-.17.689-.459.897l-9.225 6.641a1.115 1.115 0 01-1.472-.149c-.539-.586-1.18-1.204-1.371-1.322-.337-.167-1.296-.644-2.032-.644-2.058 0-3.67 1.604-3.67 3.652 0 2.049 1.612 3.653 3.67 3.653 1.588 0 2.946-1.239 3.412-2.403a1.11 1.11 0 01.648-.627c.295-.11.621-.088.901.057l9.337 4.87a1.103 1.103 0 01.401 1.607c-.041.143-.14.641-.14 2.03 0 2.048 1.613 3.652 3.669 3.652 2.058 0 3.67-1.604 3.67-3.652s-1.612-3.652-3.67-3.652c-.708 0-.874.067-1.391.325a1.12 1.12 0 01-1.494-.495 1.105 1.105 0 01.5-1.485c.79-.395 1.298-.559 2.385-.559 3.304 0 5.892 2.577 5.892 5.866 0 3.289-2.588 5.866-5.892 5.866z"
+                          fill=""
+                        ></path>
+                      </svg>
+                    </button>
+                    <div class="share-dropdown__menu" id="share_profile_link">
+                      <div class="dropdow-menu__wrapper">
+                        <div class="dropdown-menu__close">
+                          <div class="dropdown-menu-close-btn">
+                            <span>
+                              <svg
+                                xmlns="https://www.w3.org/2000/svg"
+                                version="1.1"
+                                id="prefix__Layer_1"
+                                x="0"
+                                y="0"
+                                viewBox="0 0 492 492"
+                                xml:space="preserve"
+                                width="512"
+                                height="512"
+                              >
+                                <path
+                                  d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
+                                  data-original="#000000"
+                                  class="prefix__active-path"
+                                  fill="#fff"
+                                ></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <h4 class="dropdown-menu-title">Share Link</h4>
+                        <div class="dropdow-menu__container">
+                          <div class="dropdown-menu-item__wrapper facebook">
+                            <div class="dropdown-menu__item">
+                              <div class="dropdown-item__icon">
+                                <svg
+                                  class="fb-share-icon__svg"
+                                  xmlns="https://www.w3.org/2000/svg"
+                                  width="152"
+                                  height="150"
+                                  viewBox="0 0 152 150"
+                                >
+                                  <path
+                                    d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                    fill="#E8F1FE"
+                                  ></path>
+                                  <path
+                                    d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
+                                    fill="#1575F2"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <div
+                                class="dropdown-item__text"
+                                id="shareFBProfile"
+                                role="link"
+                              >
+                                Facebook
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown-menu-item__wrapper telegram">
+                            <div class="dropdown-menu__item">
+                              <div class="dropdown-item__icon">
+                                <svg
+                                  class="fb-share-icon__svg"
+                                  xmlns="https://www.w3.org/2000/svg"
+                                  width="152"
+                                  height="150"
+                                  viewBox="0 0 152 150"
+                                >
+                                  <path
+                                    d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                    fill="#E6F3FF"
+                                  ></path>
+                                  <path
+                                    d="M67.081 99.612l.994-15.661L95.344 58.33c1.207-1.147-.249-1.703-1.846-.703l-33.66 22.178-14.558-4.814c-3.125-.925-3.16-3.184.71-4.813l56.704-22.807c2.592-1.221 5.078.667 4.083 4.814l-9.658 47.427c-.674 3.37-2.627 4.184-5.325 2.629L77.093 90.912l-7.065 7.146c-.817.851-1.492 1.554-2.947 1.554z"
+                                    fill="#08C"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <div
+                                class="dropdown-item__text"
+                                id="shareTelegramProfile"
+                                role="link"
+                              >
+                                Telegram
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown-menu-item__wrapper linkedin">
+                            <div class="dropdown-menu__item">
+                              <div class="dropdown-item__icon">
+                                <svg
+                                  class="fb-share-icon__svg"
+                                  xmlns="https://www.w3.org/2000/svg"
+                                  width="152"
+                                  height="150"
+                                  viewBox="0 0 152 150"
+                                >
+                                  <path
+                                    d="M75.625 0c41.421 0 75 33.579 75 75s-33.579 75-75 75-75-33.579-75-75 33.579-75 75-75z"
+                                    fill="#E2F1F8"
+                                  ></path>
+                                  <path
+                                    d="M101.106 105.942h-6.894l-.071-13.415c-.071-14.448-.035-13.762-.677-15.563-.737-2.079-2.057-3.391-4.006-3.983-1.093-.325-3.209-.349-4.266-.035-1.949.569-3.399 1.777-4.374 3.623-1.046 1.975-.962.709-1.022 15.924L79.76 106H65.891l-.072-20.069c-.047-11.034-.106-20.778-.142-21.661l-.072-1.591h11.897l.06.372c.083.464.665 5.342.665 5.54 0 .302.262.069.88-.802 1.735-2.404 3.981-4.123 6.643-5.052.987-.348 2.865-.79 3.828-.906.998-.128 4.385-.069 5.466.093 1.771.267 2.817.581 4.397 1.336 4.695 2.241 7.465 6.724 8.403 13.588.119.837.155 4.449.155 15.099v13.995h-6.893zM47.034 56.221a6.633 6.633 0 01-2.971-4.61c-.19-1.336.047-2.857.63-4.007.808-1.626 2.722-3.043 4.623-3.438 1.01-.221 2.947-.221 3.946-.012 1.331.268 2.294.79 3.316 1.789 1.403 1.37 2.044 2.927 2.044 4.901-.012 1.684-.606 3.171-1.759 4.332-2.496 2.544-6.81 2.997-9.829 1.045zm11.196 6.458V106H44.444V62.679H58.23z"
+                                    fill="#08C"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <div
+                                class="dropdown-item__text"
+                                id="shareLinkedinProfile"
+                                role="link"
+                              >
+                                LinkedIn
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dropdow-menu__footer">
+                          <div class="share-link">
+                            <div class="share-link--wrapper">
+                              <span
+                                class="link-text"
+                                title="https://hl.ink/jVr4thhh"
+                                >https://hl.ink/jVr4thhh</span
+                              >
+                              <span
+                                class="icon copy"
+                                title="https://hl.ink/jVr4thhh"
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cover-image-container">
+                  <div
+                    class="cover-image__component lazy entered loaded"
+                    data-bg="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/users/covers/143affe7446a4eaa803cb09fce90b423.jpg"
+                    data-ll-status="loaded"
+                    style="
+                      background-image: url('https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/users/covers/143affe7446a4eaa803cb09fce90b423.jpg');
+                    "
+                  ></div>
+                  <div
+                    class="preview-share-icon-wrapper qr-code-button"
+                    style="background-color: #265eb9"
+                  >
+                    <div
+                      class="preview-share-icon__component qr-code__component"
+                      id="qrCodeIconDropdown"
+                    >
+                      <svg
+                        version="1.1"
+                        id="Слой_1"
+                        xmlns="https://www.w3.org/2000/svg"
+                        xmlns:xlink="https://www.w3.org/1999/xlink"
+                        x="0"
+                        y="0"
+                        viewBox="0 0 60 60"
+                        xml:space="preserve"
+                      >
+                        <style>
+                          .st1 {
+                            fill: #ffffff;
+                          }
+                        </style>
+                        <defs>
+                          <path id="SVGID_1_" d="M0 0h60v60H0z"></path>
+                        </defs>
+                        <clipPath id="SVGID_2_">
+                          <use xlink:href="#SVGID_1_" overflow="visible"></use>
+                        </clipPath>
+                        <g clip-path="url(#SVGID_2_)">
+                          <path
+                            class="st1"
+                            d="M57.6 34.3h-18c-1.3 0-2.4 1.1-2.4 2.5v20.8c0 1.4 1.1 2.5 2.4 2.5h18c1.3 0 2.4-1.1 2.4-2.5V36.7c0-1.3-1.1-2.4-2.4-2.4zm-2.4 20.8H42V39.2h13.1v15.9zM2.6 23.3h8.2c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5H5.1V5h12.8v9.2c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5V2.5C23 1.1 21.8 0 20.4 0H2.6C1.9 0 1.2.3.7.7.3 1.2 0 1.8 0 2.5v18.4c0 1.3 1.2 2.4 2.6 2.4zM2.5 60h15.4c1.4 0 2.5-1.1 2.5-2.5v-15c0-1.4-1.1-2.5-2.5-2.5H2.5C1.1 40 0 41.1 0 42.5v15C0 58.9 1.1 60 2.5 60zm2.6-15h10.3v10.1H5.1V45z"
+                          ></path>
+                          <path
+                            class="st1"
+                            d="M28.7 56.7c1.3 0 2.4-1.1 2.4-2.5V28.3h26.4c1.3 0 2.4-1.1 2.4-2.5s-1.1-2.5-2.4-2.5H28.7c-.6 0-1.3.3-1.7.7-.5.5-.7 1.1-.7 1.7v28.4c0 1.5 1.1 2.6 2.4 2.6zM2.4 34.2h16.3c1.3 0 2.4-1.1 2.4-2.5v-5c0-1.4-1.1-2.5-2.4-2.5-1.3 0-2.4 1.1-2.4 2.5v2.5H2.4c-1.3 0-2.4 1.1-2.4 2.5s1.1 2.5 2.4 2.5zM30.4 18c1.3 0 2.4-1.1 2.4-2.5V7.2c0-1.4-1.1-2.5-2.4-2.5-.7 0-1.3.3-1.7.7-.5.6-.7 1.2-.7 1.8v8.4c0 1.3 1 2.4 2.4 2.4zM40.4 18.3h17.2c1.3 0 2.4-1.1 2.4-2.5V2.5C60 1.1 58.9 0 57.6 0H40.4C39.1 0 38 1.1 38 2.5v13.4c0 1.3 1.1 2.4 2.4 2.4zm2.4-13.4h12.3v8.4H42.8V4.9z"
+                          ></path>
+                        </g>
+                      </svg>
+                      <div
+                        class="share-dropdown__menu qr-code-dropdown closable"
+                        id="qrCodeDropdown"
+                      >
+                        <div class="dropdow-menu__wrapper">
+                          <div class="dropdown-menu__close">
+                            <div class="dropdown-menu-close-btn">
+                              <span>
+                                <svg
+                                  xmlns="https://www.w3.org/2000/svg"
+                                  version="1.1"
+                                  id="prefix__Layer_1"
+                                  x="0"
+                                  y="0"
+                                  viewBox="0 0 492 492"
+                                  xml:space="preserve"
+                                  width="512"
+                                  height="512"
+                                >
+                                  <script type="text/javascript"></script>
+                                  <path
+                                    d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
+                                    data-original="#000000"
+                                    class="prefix__active-path"
+                                    fill="#fff"
+                                  ></path>
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="dropdow-menu__container">
+                            <div class="qr-code-dropdown-content">
+                              <div class="qr-code-dropdown-header">
+                                <svg
+                                  version="1.1"
+                                  id="Layer_1"
+                                  xmlns="https://www.w3.org/2000/svg"
+                                  x="0"
+                                  y="0"
+                                  viewBox="0 0 43.9 43.9"
+                                  xml:space="preserve"
+                                >
+                                  <path
+                                    d="M34.6 9.3l7.1 7.1c2.5 2.5 2.5 6.6 0 9.2-.4.4-.7.8-1.1 1.1-1.3 1.2-3.3 1.2-4.5-.1-.9-.9-1.2-2.2-.8-3.4.2-.5.2-.4.5-1.2.4-.9.2-2.1-.6-2.8l-5.3-5.3-5.3-5.3c-.8-.8-1.9-.9-2.8-.6-.8.3-.7.3-1.2.5-1.1.4-2.5.2-3.4-.8-1.2-1.2-1.3-3.2-.1-4.5l1.1-1.1c2.5-2.5 6.6-2.5 9.2 0l7.2 7.2zM13.9 30.1l-5.3-5.3c-.7-.7-.9-1.8-.6-2.7.1-.3.4-1 .5-1.2.5-1.2.2-2.5-.7-3.5-1.2-1.2-3.2-1.3-4.5-.1l-1.1 1.1c-2.5 2.5-2.5 6.6 0 9.2l7.1 7.1 7.1 7.1c2.5 2.5 6.6 2.5 9.2 0 .4-.4.8-.7 1.1-1.1 1.2-1.3 1.2-3.3-.1-4.5-.9-.9-2.3-1.2-3.5-.7-.3.1-.9.4-1.2.5-.9.3-2 .1-2.7-.6l-5.3-5.3zM33.5 39.1c1.5 1.5 4 1.5 5.5 0s1.5-4 0-5.5l-8.4-8.4c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5c4.3 4.3 4.1 4 8.4 8.4zM13.3 18.8c1.5 1.5 4 1.5 5.5 0s1.5-4 0-5.5l-8.4-8.4c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5c4.3 4.3 4 4.1 8.4 8.4z"
+                                  ></path>
+                                </svg>
+                                <span>HeyLink.me</span>
+                              </div>
+                              <div class="qr-code-dropdown-user-link">
+                                <span>https://heylink.me/FahadMuhayya</span>
+                              </div>
+                              <img
+                                src="https://cdn-b.heylink.me/media/users/qr_codes/6e362a80929545c69836717ff2d69c69.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="dropdow-menu__footer">
+                              <div
+                                class="download-qr-code-btn"
+                                id="downloadQrCodeBtn"
+                                data-image="https://s3-ap-southeast-2.amazonaws.com/cdn-b.heylink.me/media/users/qr_codes/6e362a80929545c69836717ff2d69c69.png"
+                              >
+                                <div class="icon"></div>
+                                <div class="text">Download QR Code</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="preview-share-icon-wrapper"
+                    style="background-color: #265eb9"
+                  >
+                    <div
+                      class="preview-share-icon__component"
+                      id="shareIconDropdown"
+                    >
+                      <svg
+                        xmlns="https://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M24.112 29.996c-3.304 0-5.892-2.577-5.892-5.866 0-.935.039-1.606.114-2.102l-7.543-3.934c-1.096 1.642-2.977 2.716-4.907 2.716-3.304 0-5.891-2.577-5.891-5.867 0-3.288 2.587-5.866 5.891-5.866 1.26 0 2.514.624 3.051.891.345.173.834.608 1.308 1.078l8.007-5.763c.285-3.005 2.757-5.28 5.862-5.28 3.304 0 5.892 2.576 5.892 5.865s-2.588 5.866-5.892 5.866c-1.636 0-3.155-.662-4.171-1.817a1.102 1.102 0 01.104-1.561 1.112 1.112 0 011.569.104c.584.664 1.518 1.061 2.498 1.061 2.058 0 3.67-1.604 3.67-3.653 0-2.048-1.612-3.652-3.67-3.652-2.056 0-3.669 1.604-3.669 3.652 0 .355-.17.689-.459.897l-9.225 6.641a1.115 1.115 0 01-1.472-.149c-.539-.586-1.18-1.204-1.371-1.322-.337-.167-1.296-.644-2.032-.644-2.058 0-3.67 1.604-3.67 3.652 0 2.049 1.612 3.653 3.67 3.653 1.588 0 2.946-1.239 3.412-2.403a1.11 1.11 0 01.648-.627c.295-.11.621-.088.901.057l9.337 4.87a1.103 1.103 0 01.401 1.607c-.041.143-.14.641-.14 2.03 0 2.048 1.613 3.652 3.669 3.652 2.058 0 3.67-1.604 3.67-3.652s-1.612-3.652-3.67-3.652c-.708 0-.874.067-1.391.325a1.12 1.12 0 01-1.494-.495 1.105 1.105 0 01.5-1.485c.79-.395 1.298-.559 2.385-.559 3.304 0 5.892 2.577 5.892 5.866 0 3.289-2.588 5.866-5.892 5.866z"
+                          fill="#ffffff"
+                        ></path>
+                      </svg>
+
+                      <div class="share-dropdown__menu" id="share_profile_link">
+                        <div class="dropdow-menu__wrapper">
+                          <div class="dropdown-menu__close">
+                            <div class="dropdown-menu-close-btn">
+                              <span>
+                                <svg
+                                  xmlns="https://www.w3.org/2000/svg"
+                                  version="1.1"
+                                  id="prefix__Layer_1"
+                                  x="0"
+                                  y="0"
+                                  viewBox="0 0 492 492"
+                                  xml:space="preserve"
+                                  width="512"
+                                  height="512"
+                                >
+                                  <script type="text/javascript"></script>
+                                  <path
+                                    d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
+                                    data-original="#000000"
+                                    class="prefix__active-path"
+                                    fill="#fff"
+                                  ></path>
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+
+                          <h4 class="dropdown-menu-title">Share Link</h4>
+
+                          <div class="dropdow-menu__container">
+                            <div class="dropdown-menu-item__wrapper facebook">
+                              <div class="dropdown-menu__item">
+                                <div class="dropdown-item__icon">
+                                  <svg
+                                    class="fb-share-icon__svg"
+                                    xmlns="https://www.w3.org/2000/svg"
+                                    width="152"
+                                    height="150"
+                                    viewBox="0 0 152 150"
+                                  >
+                                    <path
+                                      d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                      fill="#E8F1FE"
+                                    ></path>
+                                    <path
+                                      d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
+                                      fill="#1575F2"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div
+                                  class="dropdown-item__text"
+                                  id="shareFBProfile"
+                                  role="link"
+                                  data-shareurl="https://hl.ink/amjad"
+                                >
+                                  Facebook
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="dropdown-menu-item__wrapper telegram">
+                              <div class="dropdown-menu__item">
+                                <div class="dropdown-item__icon">
+                                  <svg
+                                    xmlns="https://www.w3.org/2000/svg"
+                                    width="152"
+                                    height="150"
+                                    viewBox="0 0 152 150"
+                                  >
+                                    <path
+                                      d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                      fill="#E6F3FF"
+                                    ></path>
+                                    <path
+                                      d="M67.081 99.612l.994-15.661L95.344 58.33c1.207-1.147-.249-1.703-1.846-.703l-33.66 22.178-14.558-4.814c-3.125-.925-3.16-3.184.71-4.813l56.704-22.807c2.592-1.221 5.078.667 4.083 4.814l-9.658 47.427c-.674 3.37-2.627 4.184-5.325 2.629L77.093 90.912l-7.065 7.146c-.817.851-1.492 1.554-2.947 1.554z"
+                                      fill="#08C"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div
+                                  class="dropdown-item__text"
+                                  id="shareTelegramProfile"
+                                  role="link"
+                                  data-shareurl="https://hl.ink/amjad"
+                                >
+                                  Telegram
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="dropdown-menu-item__wrapper linkedin">
+                              <div class="dropdown-menu__item">
+                                <div class="dropdown-item__icon">
+                                  <svg
+                                    xmlns="https://www.w3.org/2000/svg"
+                                    width="152"
+                                    height="150"
+                                    viewBox="0 0 152 150"
+                                  >
+                                    <path
+                                      d="M75.625 0c41.421 0 75 33.579 75 75s-33.579 75-75 75-75-33.579-75-75 33.579-75 75-75z"
+                                      fill="#E2F1F8"
+                                    ></path>
+                                    <path
+                                      d="M101.106 105.942h-6.894l-.071-13.415c-.071-14.448-.035-13.762-.677-15.563-.737-2.079-2.057-3.391-4.006-3.983-1.093-.325-3.209-.349-4.266-.035-1.949.569-3.399 1.777-4.374 3.623-1.046 1.975-.962.709-1.022 15.924L79.76 106H65.891l-.072-20.069c-.047-11.034-.106-20.778-.142-21.661l-.072-1.591h11.897l.06.372c.083.464.665 5.342.665 5.54 0 .302.262.069.88-.802 1.735-2.404 3.981-4.123 6.643-5.052.987-.348 2.865-.79 3.828-.906.998-.128 4.385-.069 5.466.093 1.771.267 2.817.581 4.397 1.336 4.695 2.241 7.465 6.724 8.403 13.588.119.837.155 4.449.155 15.099v13.995h-6.893zM47.034 56.221a6.633 6.633 0 01-2.971-4.61c-.19-1.336.047-2.857.63-4.007.808-1.626 2.722-3.043 4.623-3.438 1.01-.221 2.947-.221 3.946-.012 1.331.268 2.294.79 3.316 1.789 1.403 1.37 2.044 2.927 2.044 4.901-.012 1.684-.606 3.171-1.759 4.332-2.496 2.544-6.81 2.997-9.829 1.045zm11.196 6.458V106H44.444V62.679H58.23z"
+                                      fill="#08C"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div
+                                  class="dropdown-item__text"
+                                  id="shareLinkedinProfile"
+                                  role="link"
+                                  data-shareurl="https://hl.ink/amjad"
+                                >
+                                  LinkedIn
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="dropdow-menu__footer">
+                            <div class="share-link">
+                              <div class="share-link--wrapper">
+                                <span
+                                  class="link-text"
+                                  title="https://hl.ink/amjad"
+                                  >https://hl.ink/amjad</span
+                                >
+                                <span
+                                  class="icon copy"
+                                  data-shareurl="https://hl.ink/amjad"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="username">FahadMuhayya</div>
+                <div class="preview-user-description__component">
+                  <div class="description-wrapper">
+                    <p>sdsaddsdsdsadasdsad</p>
+                  </div>
+                  <div class="highlights-wrapper">
+                    <div class="highlights-title">razan razan</div>
+                    <ul>
+                      <li>razan test</li>
+                      <li>razan test</li>
+                      <li>razan</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- social media  -->
+              <div class="preview-social-links__component">
+                <a
+                  class="social-link-item-button__component whatsapp"
+                  href="https://wa.me/5555555555555"
+                  data-linkid="650913950880403456000000-1"
+                  data-ip="162.158.165.67"
+                  target="_blank"
+                  style="
+                    background: linear-gradient(
+                      0deg,
+                      rgba(46, 153, 33, 1) 0%,
+                      rgba(94, 227, 87, 1) 100%
+                    );
+                  "
+                >
+                  <div class="icon">
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 26 26"
+                    >
+                      <g id="ic_whatsapp">
+                        <path
+                          id="WhatsApp"
+                          d="M13.017,-0.006 C5.860,-0.006 0.037,5.813 0.037,12.967 C0.037,15.289 0.653,17.551 1.824,19.538 C1.824,19.538 0.004,26.001 0.004,26.001 C0.004,26.001 6.671,24.285 6.671,24.285 C8.603,25.368 10.787,25.939 13.017,25.939 C20.174,25.939 25.996,20.120 25.996,12.967 C25.996,5.813 20.174,-0.006 13.017,-0.006 zM21.370,16.863 C21.370,16.863 21.210,17.610 21.210,17.610 C21.030,18.453 20.529,19.198 19.802,19.663 C18.884,20.249 17.695,20.537 16.184,20.110 C11.493,18.784 8.840,15.681 7.416,13.741 C5.993,11.801 5.443,9.861 5.799,8.276 C6.037,7.214 6.814,6.399 7.301,5.977 C7.539,5.770 7.847,5.665 8.163,5.682 C8.163,5.682 9.165,5.737 9.165,5.737 C9.362,5.747 9.536,5.870 9.614,6.051 C9.614,6.051 11.074,9.466 11.074,9.466 C11.152,9.648 11.120,9.859 10.990,10.009 C10.990,10.009 9.719,11.479 9.719,11.479 C9.616,11.598 9.597,11.768 9.670,11.907 C11.344,15.130 14.395,16.407 15.306,16.727 C15.461,16.781 15.633,16.730 15.734,16.599 C15.734,16.599 17.063,14.877 17.063,14.877 C17.211,14.685 17.472,14.621 17.692,14.722 C17.692,14.722 21.079,16.283 21.079,16.283 C21.300,16.384 21.421,16.625 21.370,16.863 z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="text">My WhatsApp</div>
+                </a>
+                <a
+                  class="social-link-item-button__component telegram"
+                  href="https://telegram.me/FahadMuhayya"
+                  data-linkid="631534865447458119942144-1"
+                  data-ip="162.158.165.67"
+                  target="_blank"
+                  style="
+                    background: linear-gradient(
+                      180deg,
+                      rgba(78, 178, 235, 1) 0%,
+                      rgba(37, 130, 198, 1) 85%,
+                      rgba(44, 138, 198, 1) 100%
+                    );
+                  "
+                >
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 81">
+                      <path
+                        d="M5.9 35.3l57.2-24C68.7 8.7 87.9.7 87.9.7s8.8-3.5 8.1 5c-.2 3.5-2.2 15.8-4.2 29.1l-6.1 39.3s-.5 5.8-4.7 6.8-11-3.5-12.3-4.5c-1-.8-18.4-12-24.8-17.5-1.7-1.5-3.7-4.5.2-8 8.8-8.3 19.4-18.5 25.8-25 2.9-3 5.9-10-6.4-1.5L29 48s-3.9 2.5-11.3.3C10.3 46 1.7 43 1.7 43s-5.9-3.7 4.2-7.7z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text">My Telegram</div>
+                </a>
+                <a
+                  class="social-link-item-button__component twitter"
+                  href="https://www.twitter.com/Fahadmuhayya"
+                  data-linkid="618304990521000242446336-1"
+                  target="_blank"
+                  style="
+                    background: linear-gradient(
+                      0deg,
+                      rgba(28, 134, 221, 1) 0%,
+                      rgba(84, 198, 247, 1) 100%
+                    );
+                  "
+                >
+                  <div class="icon">
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 31 25"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <g id="ic_twitter">
+                        <path
+                          id="twitter"
+                          d="M0.224,21.695 C3.001,23.355 6.294,24.315 9.826,24.315 C19.745,24.315 27.786,16.738 27.786,7.392 C27.786,7.158 27.782,6.927 27.771,6.696 C28.131,6.430 30.350,4.754 30.894,3.676 C30.894,3.676 29.091,4.382 27.328,4.548 C27.324,4.548 27.320,4.549 27.317,4.549 C27.317,4.549 27.320,4.547 27.326,4.543 C27.488,4.441 29.760,2.984 30.068,1.247 C30.068,1.247 28.794,1.888 27.009,2.449 C26.713,2.542 26.404,2.633 26.085,2.717 C24.935,1.560 23.300,0.838 21.485,0.838 C18.003,0.838 15.182,3.495 15.182,6.773 C15.182,7.236 15.238,7.686 15.345,8.118 C14.859,8.100 7.450,7.708 2.410,1.957 C2.410,1.957 -0.602,5.832 4.205,9.816 C4.205,9.816 2.744,9.761 1.483,9.052 C1.483,9.052 1.020,13.746 6.464,14.946 C6.464,14.946 5.393,15.328 3.684,15.056 C3.684,15.056 4.639,18.849 9.477,19.203 C9.477,19.203 5.652,22.459 0.222,21.695 C0.222,21.695 0.224,21.695 0.224,21.695 z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="text">My Twitter</div>
+                </a>
+                <a
+                  class="social-link-item-button__component instagram"
+                  href="https://www.instagram.com/FahadMuhayya"
+                  data-linkid="618297559796765672144896-1"
+                  target="_blank"
+                  style="
+                    background: linear-gradient(
+                      270deg,
+                      rgba(245, 132, 60, 1) 0%,
+                      rgba(215, 57, 122, 1) 55%,
+                      rgba(89, 89, 206, 1) 100%
+                    );
+                  "
+                >
+                  <div class="icon">
+                    <svg
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <g id="ic_instagram">
+                        <path
+                          id="instagram"
+                          d="M23.913,18.045 C23.848,19.464 23.613,20.229 23.416,20.737 C22.942,21.965 21.966,22.942 20.736,23.416 C20.229,23.613 19.464,23.848 18.044,23.913 C16.471,23.985 15.999,24.000 12.000,24.000 C8.001,24.000 7.529,23.985 5.955,23.913 C4.535,23.848 3.771,23.613 3.259,23.414 C2.652,23.191 2.094,22.827 1.637,22.357 C1.173,21.907 0.810,21.348 0.584,20.736 C0.387,20.228 0.152,19.463 0.087,18.045 C0.015,16.463 -0.000,15.989 -0.000,12.000 C-0.000,8.011 0.015,7.537 0.087,5.955 C0.152,4.536 0.387,3.771 0.585,3.259 C0.810,2.652 1.173,2.093 1.643,1.637 C2.094,1.173 2.652,0.809 3.264,0.584 C3.771,0.387 4.536,0.152 5.955,0.087 C7.530,0.015 8.002,-0.000 12.000,-0.000 C15.989,-0.000 16.463,0.015 18.045,0.087 C19.463,0.152 20.228,0.387 20.741,0.586 C21.347,0.809 21.906,1.173 22.363,1.643 C22.827,2.093 23.190,2.652 23.416,3.264 C23.613,3.770 23.848,4.534 23.913,5.955 C23.985,7.528 24.000,8.001 24.000,12.000 C24.000,15.999 23.985,16.471 23.913,18.045 zM12.000,4.012 C7.595,4.012 4.011,7.595 4.011,12.000 C4.011,16.405 7.595,19.988 12.000,19.988 C16.405,19.988 19.989,16.405 19.989,12.000 C19.989,7.595 16.405,4.012 12.000,4.012 zM20.002,1.908 C18.850,1.908 17.913,2.845 17.913,3.997 C17.913,5.149 18.850,6.087 20.002,6.087 C21.154,6.087 22.091,5.149 22.092,3.997 C22.092,2.845 21.155,1.908 20.002,1.908 zM12.000,16.707 C9.405,16.707 7.293,14.595 7.293,12.000 C7.293,9.404 9.405,7.293 12.000,7.293 C14.595,7.293 16.707,9.404 16.707,12.000 C16.707,14.595 14.595,16.707 12.000,16.707 z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="text">My Instagram</div>
+                </a>
+                <a
+                  class="social-link-item__component email"
+                  href="mailto:Swipyysa@gmail.com"
+                  data-linkid="618312421289885911547904-1"
+                  target="_blank"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 77">
+                    <g fill-rule="nonzero">
+                      <path
+                        d="M92.8 46.5c2.1 0 3.8-1.7 3.8-3.8V15.2C96.6 6.9 89.8.1 81.5.1H15.1C6.8.1 0 6.9 0 15.2v46.4c0 8.3 6.8 15.1 15.1 15.1h66.4c8.3 0 15.1-6.8 15.1-15.1 0-2.1-1.7-3.8-3.8-3.8-2.1 0-3.8 1.7-3.8 3.8 0 4.2-3.4 7.5-7.5 7.5H15.1c-4.2 0-7.5-3.4-7.5-7.5V15.2c0-4.2 3.4-7.5 7.5-7.5h66.4c4.2 0 7.5 3.4 7.5 7.5v27.5c0 2.1 1.7 3.8 3.8 3.8z"
+                      ></path>
+                      <path
+                        d="M72.2 18.8L48.3 38l-24-19.3c-1.7-1.4-4.2-1.2-5.6.5-1.4 1.7-1.2 4.2.5 5.6l26.2 21.1c.8.6 1.7.9 2.7.9H48.4c.9 0 1.8-.3 2.5-.9l26.2-21.1c1.7-1.4 1.9-3.9.5-5.6-1.2-1.6-3.7-1.8-5.4-.4z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  class="social-link-item__component youtube"
+                  href="https://www.youtube.com/channel/UC68oUyPqzfrAGzERFFrYJjA"
+                  data-linkid="618394162694600792473600-1"
+                  target="_blank"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97">
+                    <g fill-rule="nonzero">
+                      <path
+                        d="M40.2 28c-2.5-1.5-5.7.3-5.7 3.2v35.1c0 2.9 3.2 4.7 5.7 3.2L69.6 52c2.4-1.5 2.4-5 0-6.5L40.2 28zm1.9 31.7V37.9l18.3 10.9-18.3 10.9z"
+                      ></path>
+                      <path
+                        d="M94.8 21.6c-1.6-9.9-8.7-17.4-17.9-18.9C65.5.9 62.6.3 48.9.3 35.3.3 32.4.9 21 2.7c-9.1 1.4-16.3 9-17.9 18.9C1.6 30.9.9 39.6.9 48.4s.7 17.5 2.2 26.8c1.6 9.9 8.7 17.4 17.9 18.9 11.4 1.8 14.3 2.4 28 2.4 13.6 0 16.5-.6 27.9-2.4 9.1-1.4 16.3-9 17.9-18.9.1-.8.2-1.6.4-2.5 0-1.9-1.4-3.5-3.4-3.7-1.7-.2-3.2.8-3.8 2.3-.1.9-.3 1.7-.4 2.6-1 6.5-5.7 11.5-11.7 12.5-22.1 3.5-31.6 3.5-53.7 0-6-.9-10.7-5.9-11.7-12.5C9.1 65 8.4 56.7 8.4 48.4s.7-16.5 2.1-25.5c1-6.5 5.7-11.5 11.7-12.5 22.1-3.5 31.6-3.5 53.7 0 6 .9 10.7 5.9 11.7 12.5 1.4 8.9 2.1 17.2 2.1 25.5 0 2 0 4-.1 5.9.2 1.8 1.5 3.2 3.4 3.4 1.8.2 3.3-.9 3.9-2.4.1-2.3.1-4.6.1-6.9 0-8.8-.7-17.5-2.2-26.8z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  class="social-link-item__component facebook"
+                  href="https://m.facebook.com/SwipyySA"
+                  data-linkid="618319852103422679449600-1"
+                  target="_blank"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97">
+                    <g fill-rule="nonzero">
+                      <path
+                        d="M93 66.5c2.1 0 3.8-1.7 3.8-3.8V15.2C96.8 6.9 90 .1 81.7.1H15.3C7 .1.2 6.9.2 15.2v66.4c0 8.3 6.8 15.1 15.1 15.1h66.4c8.3 0 15.1-6.8 15.1-15.1 0-2.1-1.7-3.8-3.8-3.8-2.1 0-3.8 1.7-3.8 3.8 0 4.2-3.4 7.5-7.5 7.5H63.2V61.6h8.7c1.9 0 3.5-1.4 3.7-3.3l.5-4.1c.3-2.2-1.5-4.2-3.7-4.2h-9.2V37.4c0-3.1 2.5-5.7 5.7-5.7h4.7c2.1 0 3.8-1.7 3.8-3.8V24c0-1.9-1.5-3.6-3.4-3.8-1.9-.2-3.9-.4-5.1-.4-4.4 0-8.8 1.9-12.1 5.1-3.4 3.3-5.3 7.7-5.3 12.3v12.6H43c-2.1 0-3.8 1.7-3.8 3.8v4.1c0 2.1 1.7 3.8 3.8 3.8h8.5V89H15.3c-4.2 0-7.5-3.4-7.5-7.5V15.1c0-4.2 3.4-7.5 7.5-7.5h66.4c4.2 0 7.5 3.4 7.5 7.5v47.5c0 2.2 1.7 3.9 3.8 3.9z"
+                        fill-rule="nonzero"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  class="social-link-item__component snapchat"
+                  href="https://www.snapchat.com/add/FahadMuhayya"
+                  data-linkid="618290129117182200643584-1"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                  >
+                    <g fill-rule="nonzero">
+                      <path
+                        d="M93.225 72.5248C92.7395 72.4052 92.2458 72.3184 91.7679 72.1703C88.4027 71.1302 85.5497 69.5402 83.1395 67.4235C82.4989 66.7021 81.5925 66.2506 80.5859 66.2506C78.6441 66.2506 77.0703 67.9224 77.0703 69.9851C77.0703 71.2863 77.6979 72.4307 78.6482 73.0996C79.0506 73.4555 79.4584 73.8034 79.8759 74.1346C78.059 75.1885 76.6981 76.8223 75.9675 78.842C75.4903 78.7829 75.0021 78.7282 74.5008 78.683C73.7696 78.6173 73.0486 78.5823 72.3585 78.5787L72.2342 78.5779C67.7827 78.5779 63.9766 79.8288 60.5983 82.4028L60.2468 82.6705C58.5569 83.9593 56.9612 85.1767 55.4121 86.0286C53.5746 87.0395 51.8251 87.5311 50.0625 87.5311C48.2882 87.5311 46.5091 87.0351 44.6222 86.0147C43.4137 85.3612 42.3301 84.6187 41.4011 83.8091C37.3094 80.2417 32.5853 78.4197 27.3585 78.392L27.2336 78.3912C26.1445 78.3912 25.0178 78.4685 23.8642 78.621C23.0725 76.5576 21.9025 75.1564 20.144 74.1885C23.4179 71.5328 26.3231 68.0209 28.9007 63.622C29.7941 62.0961 30.5974 60.4513 31.2875 58.7322C31.8753 57.2668 32.1966 55.7971 32.242 54.3646C32.3209 51.868 31.6151 49.5835 30.2376 47.7076C30.3866 47.5661 30.5308 47.4187 30.6702 47.2648C31.7709 46.0475 33.057 43.8812 32.9293 40.4728C32.8922 39.4874 32.8483 38.4954 32.8057 37.5363C32.6986 35.1104 32.5976 32.8194 32.5976 30.5838C32.5976 29.3417 32.6333 28.2287 32.7082 27.1813C33.1387 21.0975 36.0391 16.9451 41.5742 14.4864C44.8 13.0531 47.4958 12.4689 50.8789 12.4689C54.8511 12.4689 58.5027 13.8722 62.043 16.7598C65.7674 19.7984 67.5781 23.8414 67.5781 29.12C67.5781 32.7545 67.3824 36.5546 67.1647 40.4531C66.978 43.8024 68.2414 45.9745 69.3345 47.2065C69.4739 47.364 69.6188 47.515 69.7678 47.6587C68.3561 49.4435 67.585 51.5952 67.5781 53.9044C67.5733 55.6527 68.1542 57.0451 68.514 57.8671C69.018 59.2741 70.2958 60.2748 71.7968 60.2748C73.7387 60.2748 75.3125 58.6031 75.3125 56.5404C75.3125 55.7577 75.0845 55.032 74.6972 54.4317C74.6437 54.2589 74.6087 54.0904 74.6093 53.927C74.6121 52.9051 75.3145 52.0678 76.3637 51.4332C77.5427 50.7214 79.0073 50.3049 80.2336 49.6718C81.8253 48.8498 83.4691 48.2984 84.8294 47.1452C84.841 47.135 84.852 47.124 84.8644 47.1138C84.9049 47.0796 84.944 47.0431 84.9832 47.0066C84.9852 47.0052 84.9873 47.003 84.99 47.0008C85.7241 46.3159 86.1903 45.3144 86.1903 44.1948C86.1903 42.1329 84.6165 40.4604 82.6747 40.4604C82.6149 40.4604 82.5566 40.467 82.4975 40.4699C82.4824 40.4699 82.47 40.4684 82.4556 40.4684C81.7717 40.4684 80.0682 40.9994 79.341 41.2875C78.1153 41.7733 76.6947 42.1198 75.3983 42.3247C75.3008 42.34 75.2081 42.348 75.1216 42.348C74.4576 42.348 74.1287 41.8893 74.1836 40.8958C74.4027 36.9754 74.6093 33.0119 74.6093 29.12C74.6093 21.6204 71.8779 15.3653 66.325 10.8365C61.4539 6.86284 56.2443 5 50.8789 5C46.4844 5 42.9021 5.80086 38.8612 7.59587C31.1289 11.0305 26.343 17.4965 25.6962 26.6204C25.6035 27.9376 25.5664 29.2593 25.5664 30.5838C25.5664 33.9456 25.7765 37.3795 25.9035 40.7689C25.944 41.8579 25.6282 42.3663 24.8708 42.3663C24.7747 42.3663 24.671 42.3583 24.5605 42.3422C23.1803 42.1387 21.7699 41.7551 20.4687 41.2496C20.0808 41.0993 19.4072 40.8718 18.7851 40.7062C18.4665 40.5873 18.1287 40.5173 17.7764 40.5012C17.7222 40.4969 17.6707 40.4932 17.6253 40.4932C17.5677 40.4932 17.5155 40.4969 17.466 40.502C15.5991 40.591 14.1097 42.2226 14.1097 44.2277C14.1097 45.4158 14.6336 46.4727 15.448 47.1569C15.448 47.1576 15.4494 47.1605 15.4494 47.1605C15.4638 47.1715 15.4796 47.1817 15.4933 47.1926C15.5812 47.2634 15.6712 47.3305 15.7645 47.3925C16.9895 48.275 18.5214 48.9023 19.8638 49.5624C20.9899 50.116 22.2327 50.5492 23.3279 51.1583C24.6813 51.9103 25.254 52.8716 25.2148 54.1137C25.1984 54.6272 25.0658 55.1888 24.8193 55.803C24.2837 57.137 23.652 58.4433 22.931 59.6745C19.0941 66.2244 14.1049 71.0668 6.70975 72.5379C5.68459 72.7422 5 73.9785 5 74.4613V74.6801C5.45525 76.3978 6.5889 77.5203 8.0851 78.0667C10.3915 78.9076 12.7447 79.6363 15.1184 80.2264C17.2731 80.7617 17.2971 80.6516 17.7551 82.9141C18.3628 85.9126 18.7109 86.7937 20.4687 86.7937C21.0723 86.7937 21.8386 86.5807 22.837 86.3648C24.3359 86.0403 25.8026 85.8601 27.2336 85.8601C27.2638 85.8601 27.294 85.8601 27.3242 85.8608C30.7588 85.8791 33.984 87.0052 36.9407 89.5829C38.3119 90.7776 39.8493 91.8148 41.432 92.6704C44.2953 94.2188 47.1799 95 50.0625 95C52.934 95 55.8042 94.2239 58.6462 92.6601C60.7734 91.4902 62.74 89.9622 64.6956 88.472C67.0452 86.6828 69.5288 86.0468 72.2342 86.0468H72.3242C72.8433 86.0497 73.3699 86.0767 73.9062 86.1249C75.4759 86.2671 77.0311 86.5355 78.5974 86.7266C78.9524 86.7704 79.2655 86.7937 79.5436 86.7937C80.9862 86.7937 81.4895 86.1497 81.9317 84.2248C82.1089 83.4531 82.3039 82.6844 82.433 81.9032C82.5717 81.0637 83.0805 80.6421 83.9141 80.4211C86.7623 79.6684 89.5995 78.8362 92.3722 77.8216C93.2346 77.5058 94.0503 76.6385 94.5818 75.8034C95.5053 74.3526 94.8317 72.9201 93.225 72.5248Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+                <a
+                  class="social-link-item__component tiktok"
+                  href="https://www.snapchat.com/add/FahadMuhayya"
+                  data-linkid="603591532582096412606464-1"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 86 98"
+                    fill="none"
+                  >
+                    <g fill-rule="nonzero">
+                      <path
+                        d="M82.2 23.1c-10.3 0-18.7-8.4-18.7-18.7 0-2.1-1.7-3.8-3.8-3.8H45.3c-.5 0-1 .1-1.5.3-1.4.6-2.3 1.9-2.3 3.5v61.8c0 4.1-2.6 7.6-6.5 8.9-1 .3-2 .5-3 .5-5.2 0-9.4-4.2-9.4-9.4s4.2-9.4 9.4-9.4c2.1 0 3.8-1.7 3.8-3.8V38.6c0-2.1-1.7-3.8-3.8-3.8-8.4 0-16.3 3.3-22.2 9.2C3.9 49.9.6 57.8.6 66.2c0 8.4 3.3 16.3 9.2 22.2 5.9 5.9 13.8 9.2 22.2 9.2 1.6 0 3.2-.1 4.7-.3 6.7-1 12.7-4.1 17.5-8.9 1.5-1.5 1.5-3.9 0-5.4-1.5-1.5-3.9-1.5-5.4 0-3.6 3.6-8.2 6-13.3 6.7-1.2.2-2.4.3-3.6.3-6.4 0-12.4-2.5-16.9-7-4.5-4.5-7-10.5-7-16.9 0-6.4 2.5-12.4 7-16.9 3.6-3.6 8.1-5.9 13.1-6.7v7c-7.6 1.7-13.2 8.5-13.2 16.6 0 9.4 7.6 17 17 17 1.8 0 3.6-.3 5.3-.9 6.9-2.3 11.6-8.8 11.7-16.1v-58H56c1.7 11.4 10.8 20.5 22.2 22.2v6.9c-3.1-.4-6.2-1.2-9.1-2.4-2.6-1.1-5.1-2.5-7.3-4.2-1.1-.9-2.7-1-4-.4-1.3.6-2.1 2-2.1 3.4v32.6c0 2.1 1.7 3.8 3.8 3.8 2.1 0 3.8-1.7 3.8-3.8V40.4c.9.5 1.9.9 2.9 1.3 5 2.1 10.4 3.2 15.9 3.2 2.1 0 3.8-1.7 3.8-3.8V26.7c.1-1.9-1.6-3.6-3.7-3.6z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+              <!-- messages form -->
+              <div class="preview-anonymous-messages__component">
+                <div class="link-underlayer"></div>
+                <div class="preview-anonymous-messages-wrapper">
+                  <div
+                    class="preview-anonymous-messages-content pseudo-input-preview"
+                  >
+                    <form
+                      id="anonymousMessagesForm"
+                      class="direct-messages"
+                      method="post"
+                      action="/message/"
+                      data-username="FahadMuhayya"
+                      novalidate="novalidate"
+                    >
+                      <div class="form-field input-field message">
+                        <div class="field">
+                          <input
+                            type="text"
+                            name="message"
+                            autocomplete="off"
+                            required
+                            placeholder="تفضل بترك رسالتك هنا"
+                            class="form-input"
+                            id="anonymousMessagesTextInput"
+                          />
+                          <div
+                            id="anonymousMessagesTextInput-error"
+                            class="validation-error validation-async__error"
+                          ></div>
+                          <span
+                            class="max-characters"
+                            id="anonymousMessagesTextInputMaxCharacters"
+                          >
+                            <i>512</i>
+                            characters remaining
+                          </span>
+                        </div>
+                      </div>
+                      <div class="form-field input-field">
+                        <div class="field">
+                          <input
+                            type="text"
+                            name="name"
+                            autocomplete="off"
+                            required="true"
+                            data-required="True"
+                            placeholder="Your name"
+                            class="form-input"
+                            id="anonymousMessagesNameInput"
+                          />
+                          <div
+                            id="anonymousMessagesNameInput-error"
+                            class="validation-error validation-async__error"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="form-field input-field">
+                        <div class="field">
+                          <input
+                            type="text"
+                            name="email"
+                            autocomplete="off"
+                            required="true"
+                            data-required="True"
+                            placeholder="Your email"
+                            class="form-input"
+                            id="anonymousMessagesEmailInput"
+                          />
+                          <div
+                            id="anonymousMessagesEmailInput-error"
+                            class="validation-error validation-async__error"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="form-field">
+                        <button type="submit">
+                          <span>Send Message</span>
+                          <div class="arrow">
+                            <svg
+                              xmlns="https://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                d="M19.5 9.3L1.2.1C1.1 0 .9 0 .8 0 .6 0 .5.1.3.2.2.3.1.4.1.6 0 .7 0 .9.1 1l2.5 9-2.5 9v.4c0 .1.1.2.2.3.1.1.2.2.3.2 0 .1.1.1.3.1.1 0 .3 0 .4-.1l18.3-9.2c.1-.1.3-.2.3-.3s.1-.2.1-.4 0-.3-.1-.4c-.1-.2-.2-.3-.4-.3zM2.2 17.6L4 10.8l5-.8-5-.8-1.8-6.8L17.3 10 2.2 17.6z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div
+                    class="preview-anonymous-messages-content click-button"
+                  ></div>
+                </div>
+              </div>
+              <!-- links -->
+              <div class="preview-links-list__component">
+                <div
+                  class="preview-link-item__component theme-class-07-christmas-pro wobble"
+                >
+                  <div class="link-underlayer"></div>
+                  <a
+                    href="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me"
+                    data-linkid="10949210639956285122150400-0"
+                    data-ip="172.68.144.112"
+                    target="_blank"
+                    class="preview-link-wrapper"
+                  >
+                    <div
+                      class="lazy thumbnail entered"
+                      style="
+                        background-image: url('https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=96/https://cdn-b.heylink.me/media/links/thumbnails/c55c06551e7749ee88fdeb10ce750e96.png');
+                      "
+                    ></div>
+                    <div class="link-info left">
+                      <div class="name">sewarsa.com</div>
+                    </div>
+                  </a>
+                  <div
+                    class="share-dropdown__menu share-dropdown-links"
+                    id="share_dropdown_menu_public_link_700310"
+                  >
+                    <div class="dropdow-menu__wrapper">
+                      <div class="dropdown-menu__close">
+                        <div class="dropdown-menu-close-btn">
+                          <span>
+                            <svg
+                              xmlns="https://www.w3.org/2000/svg"
+                              version="1.1"
+                              id="prefix__Layer_1"
+                              x="0"
+                              y="0"
+                              viewBox="0 0 492 492"
+                              xml:space="preserve"
+                              width="512"
+                              height="512"
+                            >
+                              <path
+                                d="M300.188 246L484.14 62.04c5.06-5.064 7.852-11.82 7.86-19.024 0-7.208-2.792-13.972-7.86-19.028L468.02 7.872C462.952 2.796 456.196.016 448.984.016c-7.2 0-13.956 2.78-19.024 7.856L246.008 191.82 62.048 7.872C56.988 2.796 50.228.016 43.02.016c-7.2 0-13.96 2.78-19.02 7.856L7.872 23.988c-10.496 10.496-10.496 27.568 0 38.052L191.828 246 7.872 429.952C2.808 435.024.02 441.78.02 448.984c0 7.204 2.788 13.96 7.852 19.028l16.124 16.116c5.06 5.072 11.824 7.856 19.02 7.856 7.208 0 13.968-2.784 19.028-7.856l183.96-183.952 183.952 183.952c5.068 5.072 11.824 7.856 19.024 7.856h.008c7.204 0 13.96-2.784 19.028-7.856l16.12-16.116c5.06-5.064 7.852-11.824 7.852-19.028 0-7.204-2.792-13.96-7.852-19.028L300.188 246z"
+                                data-original="#000000"
+                                class="prefix__active-path"
+                                fill="#fff"
+                              ></path>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <h4 class="dropdown-menu-title">Share Link</h4>
+                      <div class="dropdow-menu__container">
+                        <div class="dropdown-menu-item__wrapper facebook">
+                          <div class="dropdown-menu__item">
+                            <div class="dropdown-item__icon">
+                              <svg
+                                class="fb-share-icon__svg"
+                                xmlns="https://www.w3.org/2000/svg"
+                                width="152"
+                                height="150"
+                                viewBox="0 0 152 150"
+                              >
+                                <path
+                                  d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                  fill="#E8F1FE"
+                                ></path>
+                                <path
+                                  d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
+                                  fill="#1575F2"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div
+                              class="dropdown-item__text"
+                              id="shareFB"
+                              role="link"
+                            >
+                              Facebook
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dropdown-menu-item__wrapper facebook">
+                          <div class="dropdown-menu__item">
+                            <div class="dropdown-item__icon">
+                              <svg
+                                class="fb-share-icon__svg"
+                                xmlns="https://www.w3.org/2000/svg"
+                                width="152"
+                                height="150"
+                                viewBox="0 0 152 150"
+                              >
+                                <path
+                                  d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                  fill="#E8F1FE"
+                                ></path>
+                                <path
+                                  d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
+                                  fill="#1575F2"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div
+                              class="dropdown-item__text"
+                              id="shareFB"
+                              role="link"
+                            >
+                              Facebook
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dropdown-menu-item__wrapper facebook">
+                          <div class="dropdown-menu__item">
+                            <div class="dropdown-item__icon">
+                              <svg
+                                class="fb-share-icon__svg"
+                                xmlns="https://www.w3.org/2000/svg"
+                                width="152"
+                                height="150"
+                                viewBox="0 0 152 150"
+                              >
+                                <path
+                                  d="M75.813 0c41.421 0 75 33.579 75 75s-33.579 75-75 75C34.391 150 .812 116.421.812 75S34.391 0 75.813 0z"
+                                  fill="#E8F1FE"
+                                ></path>
+                                <path
+                                  d="M75.999 43C58.327 43 44 57.431 44 75.233c0 15.017 10.196 27.637 23.996 31.217V88.066h-6.394V76.554h6.394v-7.447c0-5.324 2.51-13.666 13.566-13.666l7.956.043v11.172h-5.224c-1.187 0-2.853.597-2.853 3.136v6.776h10.051l-1.177 11.498h-8.874V107c15.08-2.603 26.558-15.834 26.558-31.767 0-17.802-14.327-32.233-32-32.233z"
+                                  fill="#1575F2"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div
+                              class="dropdown-item__text"
+                              id="shareFB"
+                              role="link"
+                            >
+                              Facebook
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dropdow-menu__footer">
+                        <div class="share-link">
+                          <div class="share-link--wrapper">
+                            <span
+                              class="link-text"
+                              title="https://sewarsa.com/?utm_medium=social&utm_source=heylink.me"
+                              >https://sewarsa.com/?utm_medium=social&utm_source=heylink.me</span
+                            >
+                            <span class="icon copy"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- location -->
+
+              <div class="location">
+                <div
+                  id="3517"
+                  class="preview-location-item__component theme-class-21-pro"
+                >
+                  <div class="link-underlayer"></div>
+                  <div class="preview-location-link-wrapper">
+                    <div class="map-title-wrapper left">
+                      <div class="map-title">
+                        Prince Sultan Rd, Al Zahra, Jeddah 23522, Saudi Arabia
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="location-up hidden">
+                  <button class="location-btn-up">
+                    <img
+                      src="https://cdn-f.heylink.me/static/img/ic_shewron_up.svg"
+                      alt="up"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <!-- Banks  -->
+              <div class="preview-links-list__component">
+                <div
+                  class="preview-link-item__component theme-class-07-christmas-pro wobble"
+                >
+                  <div class="link-underlayer"></div>
+                  <a
+                    href="https://sewarsa.com/?utm_medium=social&amp;utm_source=heylink.me"
+                    data-linkid="10949210639956285122150400-0"
+                    data-ip="172.68.144.112"
+                    target="_blank"
+                    class="preview-link-wrapper"
+                  >
+                    <div
+                      class="lazy thumbnail entered"
+                      style="
+                        background-image: url('https://s37564.pcdn.co/wp-content/uploads/2018/08/Business-bank-account-e1534519443766.jpeg.optimal.jpeg');
+                      "
+                    ></div>
+                    <div class="link-info left">
+                      <div class="name">Alhila Bank</div>
+                      <div class="name">545456454</div>
+                      <div class="name">
+                        44545445454454544545445454454544545
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="preview-social-links__component">
+                <a
+                  class="social-link-item-button__component whatsapp"
+                  href="https://wa.me/5555555555555"
+                  data-linkid="650913950880403456000000-1"
+                  data-ip="162.158.165.67"
+                  target="_blank"
+                  style="
+                    background: linear-gradient(
+                      0deg,
+                      #d11b29 0%,
+                      #a21c24 100%
+                    );
+                  "
+                >
+                  <div class="icon">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="file-pdf"
+                      class="svg-inline--fa fa-file-pdf fa-w-12"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 384 512"
+                    >
+                      <path
+                        fill="#fff"
+                        d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text">My WhatsApp</div>
+                </a>
+              </div>
+              <div class="preview-email-sigup-generator__component bottom">
+                <div class="link-underlayer"></div>
+                <div
+                  class="preview-email-sigup-generator-wrapper"
+                  background-color=""
+                >
+                  <div
+                    class="preview-email-sigup-generator-content click-button"
+                  >
+                    <span class="base-text">Click to Subscribe</span>
+                    <span class="success-text">
+                      <div class="icon">Thanks for Subscribing!</div>
+                      <span></span>
+                    </span>
+                  </div>
+                  <div
+                    class="preview-email-sigup-generator-content pseudo-input-preview"
+                  >
+                    <form
+                      id="emailSignupGeneratorForm"
+                      action="/signup-subscription/"
+                      method="post"
+                      novalidate="novalidate"
+                    >
+                      <div class="form-field input-field">
+                        <div class="field">
+                          <input
+                            type="text"
+                            name="email"
+                            autocomplete="off"
+                            required
+                            placeholder="Your email address"
+                            class="form-input"
+                            id="sigupGeneratorTextInput"
+                          />
+                          <div
+                            id="sigupGeneratorTextInput-error"
+                            class="validation-error validation-async__error"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="form-field">
+                        <button type="submit">
+                          <span>Subscribe</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- image slider -->
+              <div class="preview-image-sliders-list__component">
+                <div
+                  class="preview-image-slider-item__component"
+                  style="background-color: #ffffff"
+                >
+                  <div class="owl-carousel owl-theme">
+                    <div class="item">
+                      <img
+                        src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="user-page-section-footer center"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="paymentLoader" class="commerce-loader">
-        <div class="window">
-            <div class="icon-animation">
-                <img src="https://cdn-f.heylink.me/static/img/Animation_Loading2.gif" alt="animation"
-                    class="img-center">
-            </div>
-            <div class="text">Making secure payment to</div>
-            <div class="text">
-                <strong>@FahadMuhayya</strong>
-            </div>
+      <div class="window">
+        <div class="icon-animation">
+          <img
+            src="https://cdn-f.heylink.me/static/img/Animation_Loading2.gif"
+            alt="animation"
+            class="img-center"
+          />
         </div>
+        <div class="text">Making secure payment to</div>
+        <div class="text">
+          <strong>@FahadMuhayya</strong>
+        </div>
+      </div>
     </div>
-
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
@@ -671,6 +1299,5 @@
     <script src="./js/owl.carousel.min.js"></script>
     <script src="./js/aos.js"></script>
     <script src="./js/index.js"></script>
-</body>
-
+  </body>
 </html>
