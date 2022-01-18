@@ -50,6 +50,24 @@
         height: 100% !important;
         min-width: auto !important;
       }
+      a.item-link {
+        position: relative;
+        display: block;
+      }
+      a.item-link .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(0 0 0 / 50%);
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+      }
     </style>
   </head>
 
@@ -1610,10 +1628,21 @@
                       />
                     </div>
                     <div class="item">
-                      <img
-                        src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
-                        alt=""
-                      />
+                      <a href="#" class="item-link">
+                        <img
+                          src="https://heylink.me/cdn-cgi/image/f=auto,q=85,fit=crop,w=600/https://cdn-b.heylink.me/media/sliders/images/a23da426dbf54a8487deb5200d1fe3e2.jpg"
+                          alt=""
+                        />
+                        <div class="text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Tempore odio placeat obcaecati eveniet,
+                            recusandae aliquid deserunt amet iste repellat
+                            tempora! Mollitia nulla officiis sed fugit
+                            provident, facere doloribus voluptatem. Officia.
+                          </p>
+                        </div>
+                      </a>
                     </div>
                     <div class="item">
                       <img
@@ -1628,12 +1657,7 @@
             <div class="user-page-section-footer center">
               <div
                 class="preview-heylinkme-logo__component"
-                style="
-          
-          color: #f84256
-          
-          height: 36px;
-        "
+                style="color: #f84256; height: 36px"
               >
                 <div class="exlusive-theme-logo"></div>
                 <div class="heylinkme-logo">
