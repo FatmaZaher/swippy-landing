@@ -102,6 +102,7 @@ $(function () {
       margin: 10,
       nav: true,
       items: 1,
+      autoplay: true,
       // rtl:true,
       // responsive: {
       //     0: {
@@ -123,11 +124,29 @@ $(function () {
   });
 
   $("#qr-code-show-btn").on("click", function (e) {
-    console.log(this);
     $("#qrCodeDropdown").fadeToggle();
   });
+  $("#qrCodeDropdown .dropdown-menu-close-btn").on("click", function (e) {
+    $("#qrCodeDropdown").fadeToggle();
+  });
+
   $("#share-show-btn").on("click", function (e) {
-    console.log(this);
     $("#share_profile_link").fadeToggle();
+  });
+
+  $("#share_profile_link .dropdown-menu-close-btn").on("click", function (e) {
+    $("#share_profile_link").fadeToggle();
+  });
+  $("#qr-code-show-btn-2").on("click", function (e) {
+    $("#qrCodeDropdown-2").fadeToggle();
+  });
+  $("#qrCodeDropdown-2 .dropdown-menu-close-btn").on("click", function (e) {
+    $("#qrCodeDropdown-2").fadeToggle();
+  });
+  $("#share-show-btn-2").on("click", function (e) {
+    $("#share_profile_link-2").fadeToggle();
+  });
+  $("#share_profile_link-2 .dropdown-menu-close-btn").on("click", function (e) {
+    $("#share_profile_link-2").fadeToggle();
   });
 });
